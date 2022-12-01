@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { FormsComponent } from './forms/forms.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     FormsComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
