@@ -4,17 +4,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    background: #222327;
+    background: #eaff08;
 }
 :root{
     --clr: #222327;
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--clr);
 }
 
 .navigation{
@@ -26,6 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    bottom: 0;
 }
 
 .navigation ul {

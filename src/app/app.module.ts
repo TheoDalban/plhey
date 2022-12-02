@@ -7,6 +7,10 @@ import { FormsComponent } from './forms/forms.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MapComponent } from './map/map.component';
 import { JeuComponent } from './jeu/jeu.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { JeuComponent } from './jeu/jeu.component';
     FormsComponent,
     CreateAccountComponent,
     MapComponent,
-    JeuComponent
+    JeuComponent,
+    NavbarComponent,
+    AddEventComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
