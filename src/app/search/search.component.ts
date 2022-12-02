@@ -2,12 +2,36 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search',
-  template: `
-        <input type="text" [value]="username">
-        <button>Ok</button>
-    `,
+  templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  username: string = 'search'
+  searchText: string = 'Recherche';
+  type: string = 'event';
+  people = [];
+  events = [];
+
+  constructor() {}
+
+  onInit() {
+    this.people = [];
+    this.events = [];
+    this.type = 'event';
+  }
+
+  search() {
+    if (this.type == 'event') {
+      this.searchEvent();
+    } else {
+      this.searchPeople();
+    }
+  }
+
+  searchEvent() {
+
+  }
+
+  searchPeople() {
+
+  }
 }

@@ -7,7 +7,7 @@ import { Map, NavigationControl } from 'maplibre-gl';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, AfterViewInit {
-
+  map: Map | undefined;
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
 
@@ -17,18 +17,14 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const myAPIKey = 'YOUR_API_KEY'; 
-    const mapStyle = 'https://maps.geoapify.com/v1/styles/positron/style.json';
+    const initialState = { lng: 139.753, lat: 35.6844, zoom: 14 };
 
-    const initialState = { lng: 11, lat: 49, zoom: 9 };
-
-    const map = new Map({
+    this.map = new Map({
       container: this.mapContainer.nativeElement,
-      style: `${mapStyle}?apiKey=${myAPIKey}`,
+      style: 'https://maps.geoapify.com/v1/styles/positron/style.json?key=SasQhOkax187ZEXzU6O0',
       center: [initialState.lng, initialState.lat],
       zoom: initialState.zoom
     });
-
-    map.addControl(new NavigationControl());
+    this.map.addControl(new NavigationControl({}), 'top-right');
   }
 }
