@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EventService } from '../services/event.service';
 
 @Component({
   selector: 'app-search',
@@ -9,10 +10,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
   searchText = "";
   type: string = 'event';
-  people = [];
-  events = [];
 
-  constructor() {}
+  constructor(public eventService: EventService) {}
 
   ngOnInit(): void {
   }

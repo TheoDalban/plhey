@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
+import { EventService } from './services/event.services';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent],
 })
 

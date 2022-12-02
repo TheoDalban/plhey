@@ -21,7 +21,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     this.map = new Map({
       container: this.mapContainer.nativeElement,
-      style: 'https://maps.geoapify.com/v1/styles/positron/style.json?key=SasQhOkax187ZEXzU6O0',
+      style: 'https://api.maptiler.com/maps/basic-v2/?key=SasQhOkax187ZEXzU6O0#1.0/0.00000/0.00000',
       center: [initialState.lng, initialState.lat],
       zoom: initialState.zoom
     });
