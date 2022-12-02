@@ -27,6 +27,7 @@
     "leaflet": "^1.9.3",
     "maplibre-gl": "^1.15.3",
     "rxjs": "~7.5.0",
+    "stream-chat": "^8.1.2",
     "tslib": "^2.3.0",
     "typescript-map": "^0.1.0",
     "zone.js": "~0.12.0"

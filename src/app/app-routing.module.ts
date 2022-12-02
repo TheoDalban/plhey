@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { FormsComponent} from "./forms/forms.component";
 import { CreateAccountComponent} from "./create-account/create-account.component"
+
 const routes: Routes = [{
   path: "",
   component: AppComponent
@@ -19,7 +20,8 @@ const routes: Routes = [{
   {
     path: "create",
     component: CreateAccountComponent,
-  }
+  },
+
 ];
 
 @NgModule({

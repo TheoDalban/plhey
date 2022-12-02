@@ -1,0 +1,39 @@
+
+<body>
+<div class="navigation">
+    <ul>
+        <li class="active"> 
+            <a href="#">
+                <span class="icon">
+                </span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list"> 
+            <a href="#">
+                <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                <span class="text">Profile</span>
+            </a>
+        </li>
+        <li class="list"> 
+            <a href="#">
+                <span class="icon"></span>
+                <span class="text">Message</span>
+            </a>
+        </li>
+        <div class="indicator"></div>
+    </ul>
+</div>
+<script>
+    const list = document.querySelectorAll(".list");
+    function activeLink(){
+        list.forEach((item) => 
+        item.classList.remove('active'));
+        this.classList.add('active');
+
+    }
+    list.forEach((item) =>
+    item.addEventListener("click",activeLink));
+</script>
+
+</body>
