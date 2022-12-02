@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { FormsComponent} from "./forms/forms.component";
 import { CreateAccountComponent} from "./create-account/create-account.component"
+import { JeuComponent } from './jeu/jeu.component';
 
 const routes: Routes = [{
   path: "",
@@ -20,7 +21,10 @@ const routes: Routes = [{
   {
     path: "create",
     component: CreateAccountComponent,
-  },
+  },{
+    path: "login/jeu", 
+    component: JeuComponent,
+  }
 
 ];
 

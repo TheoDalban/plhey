@@ -34,7 +34,9 @@
               "node_modules/leaflet/dist/leaflet.css",
               "node_modules/maplibre-gl/dist/maplibre-gl.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/app/jeu/jeu.js" 
+           ]
           },
           "configurations": {
             "production": {

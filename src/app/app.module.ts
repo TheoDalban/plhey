@@ -9,6 +9,7 @@ import { FormsComponent } from './forms/forms.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MapComponent } from './map/map.component';
 import { IgxBottomNavModule, IgxIconModule } from "igniteui-angular";
+import { JeuComponent } from './jeu/jeu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IgxBottomNavModule, IgxIconModule } from "igniteui-angular";
     SearchComponent,
     FormsComponent,
     CreateAccountComponent,
-    MapComponent
+    MapComponent,
+    JeuComponent
   ],
   imports: [
     BrowserModule,
