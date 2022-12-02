@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent {
+
+export class SearchComponent implements OnInit {
   searchText = "";
   type: string = 'event';
   people = [];
@@ -13,25 +14,26 @@ export class SearchComponent {
 
   constructor() {}
 
-  onInit() {
-    this.people = [];
-    this.events = [];
-    this.type = 'event';
+  ngOnInit(): void {
   }
 
-  search() {
+  search(txt: any) {
     if (this.type == 'event') {
-      this.searchEvent();
+      this.searchEvent;
+      console.log(txt);
     } else {
-      this.searchPeople();
+      this.searchPeople;
+      console.log(txt);
     }
   }
 
   searchEvent() {
-    this.searchText = 'Event';
+    this.searchText = 'Evènement';
+    this.type = 'event';
   }
 
   searchPeople() {
     this.searchText = 'Personne';
+    this.type = 'people';
   }
 }

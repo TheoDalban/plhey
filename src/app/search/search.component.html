@@ -1,9 +1,9 @@
 <div class="container">
     <p>Recherche</p>
     <form>
-        <input type="text" [value]="searchText">
-        <button (click)="search()">Ok</button>
+        <input type="text" id="searchtxt" name="searchtxt" [(ngModel)]="searchText" />
+        <button (click)="search(searchText)">Ok</button>
     </form>
-    <button (click)="type='event'">Evènement</button><br/>
-    <button (click)="type='people'">Personne</button>
+    <button (click)="searchEvent()">Evènement</button><br/>
+    <button (click)="searchPeople()">Personne</button>
 </div>
