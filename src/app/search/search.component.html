@@ -6,7 +6,5 @@
     </form>
     <button (click)="searchEvent()">Evènement</button><br/>
     <button (click)="searchPeople()">Personne</button>
-    <div *ngFor="let event for events"><p>{{event}}</p></div>
-    <div *ngFor="let person for people"><p>{{person}}</p></div>
-    <p>{{events}}</p>
+    <p *ngFor="let event for evtService.events">{{event}}</p>
 </div>
