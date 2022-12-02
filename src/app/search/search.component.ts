@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  searchText: string = 'Recherche';
+  searchText = "";
   type: string = 'event';
   people = [];
   events = [];
@@ -28,10 +28,10 @@ export class SearchComponent {
   }
 
   searchEvent() {
-
+    this.searchText = 'Event';
   }
 
   searchPeople() {
-
+    this.searchText = 'Personne';
   }
 }

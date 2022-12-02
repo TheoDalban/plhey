@@ -2,6 +2,8 @@
     <p>Recherche</p>
     <form>
         <input type="text" [value]="searchText">
-        <button (click)="search">Ok</button>
+        <button (click)="search()">Ok</button>
     </form>
+    <button (click)="type='event'">Evènement</button><br/>
+    <button (click)="type='people'">Personne</button>
 </div>
