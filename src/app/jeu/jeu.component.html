@@ -1,0 +1,23 @@
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="jeu.js"></script>
+
+</head>
+<script>
+    // https://boardgamegeek.com/xmlapi2/id?3
+console.log("jsrecu");
+const xhr = new XMLHttpRequest();
+
+xhr.onload = () => {
+  dump(xhr.responseXML.documentElement.nodeName);
+}
+
+xhr.onerror = () => {
+  dump("Error while getting XML.");
+}
+
+xhr.open("GET", "https://boardgamegeek.com/xmlapi2/id?3");
+xhr.responseType = "document";
+console.log(xhr.send());
+</script>
+<p>bienvenu jeu</p>

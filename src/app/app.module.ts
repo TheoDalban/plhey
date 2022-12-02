@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsComponent } from './forms/forms.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MapComponent } from './map/map.component';
+import { JeuComponent } from './jeu/jeu.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MapComponent } from './map/map.component';
     SearchComponent,
     FormsComponent,
     CreateAccountComponent,
-    MapComponent
+    MapComponent,
+    JeuComponent
   ],
   imports: [
     BrowserModule,
