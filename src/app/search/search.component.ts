@@ -15,7 +15,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.evtService.events.length);
-    this.evtService.events.push("event1", "event2");
   }
 
   search(txt: any) {

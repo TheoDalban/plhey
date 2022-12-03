@@ -2,7 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    background: rgb(47, 144, 224);
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100px;
+}
+
+.msg {
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 100px;
+    justify-content: right;
+}
+
+.header ul {
+    display:flex;
+    width: 350px;
+}
+.header ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 45px;
+} 
+
 .container {
+    margin-top: 50px;
+    margin-bottom: 15px;
     background-color: gray;
     width: 400px;
     height: 600px;

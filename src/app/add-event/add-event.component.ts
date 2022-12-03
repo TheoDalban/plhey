@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { EvtService } from '../services/evt.service';
 
 @Component({
   selector: 'app-add-event',
@@ -6,6 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./add-event.component.scss']
 })
 export class AddEventComponent {
-  @Input() events: Array<String> = ["event1", "event2"];
-  @Input() people: Array<String> = ["people1", "people2"];
+  name = "";
+  address = "";
+  type = "";
+  nb = "";
+
+  constructor(public evtService: EvtService) {}
+
+  addEvent() {
+    this.evtService.events.push({nom: this.name, lieu: this.address, type: this.type, nbind: this.nb});
+    console.log(this.evtService.events);
+  }
 }

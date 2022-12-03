@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EvtService } from '../services/evt.service';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+ constructor(public evtService: EvtService) {}
 }

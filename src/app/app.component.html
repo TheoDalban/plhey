@@ -3,21 +3,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <style>
-  body {
-    justify-content: center;
-    align-items: center;
-  }
-  #div {
-    margin: 10;
-    padding: 0;
-    display: flex;
-    width: 50%;
-
-    align-items: center;
-    justify-content: center;
-    background:#ddd url('nav_bg.jpg') 0 0 repeat-x;
-  }
-
   #div li {
 
     list-style-type: none;
@@ -69,18 +54,21 @@
   }
 </style>
 
-<body>
-<ul id="container">
-  <li><img src="../assets/logo.png" style="width: 100px"></li>
-  <li  style="padding-right: 10px;"class="py-2 px-4 text-sm font-medium border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-    &nbsp;Messages
+<div class="wrapper">
+  <div class="header">
+<ul>
+  <li class="logo"><img src="../assets/logo.png"></li>
+  <li class="msg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
   </li>
 </ul>
-
+</div>
+</div>
+<div class="container">
 <router-outlet></router-outlet>
+</div>
 <app-navbar></app-navbar>
-</body>
+
 <!--
 <router-outlet id="div">
 <ul id="div" class="w-48 text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">

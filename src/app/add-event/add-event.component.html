@@ -1,1 +1,11 @@
-<div class="container"><p>add-event works!</p></div>
+<div class="container">
+    <form>
+        <input type="text" name="name" placeholder="Nom de l'évènement" [(ngModel)]="name" /><br/>
+        <input type="text" name="address" placeholder="Lieu de l'évènement" [(ngModel)]="address" /><br/>
+        <input type="text" name="type" placeholder="Type de l'évènement" [(ngModel)]="type" /><br/>
+        <input type="text" name="nb" placeholder="Nombre d'invités" [(ngModel)]="nb" /><br/>
+        <input type="submit" (click)="addEvent()" value="Ajouter" />
+    </form>
+
+    <p *ngFor="let event of evtService.events">{{event.name}}</p>
+</div>
