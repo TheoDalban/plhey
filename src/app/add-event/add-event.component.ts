@@ -15,7 +15,7 @@ export class AddEventComponent {
   constructor(public evtService: EvtService) {}
 
   addEvent() {
-    this.evtService.events.push({nom: this.name, lieu: this.address, type: this.type, nbind: this.nb});
+    this.evtService.events.push({"nom": this.name, "lieu": this.address, "type": this.type, "nb": this.nb});
     console.log(this.evtService.events);
   }
 }

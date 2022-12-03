@@ -6,6 +6,5 @@
         <input type="text" name="nb" placeholder="Nombre d'invités" [(ngModel)]="nb" /><br/>
         <input type="submit" (click)="addEvent()" value="Ajouter" />
     </form>
-
-    <p *ngFor="let event of evtService.events">{{event.name}}</p>
+    <p *ngFor="let event of evtService.events">{{event.nom}}</p>
 </div>
