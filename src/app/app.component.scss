@@ -12,34 +12,23 @@
     width: 400px;
     height: 50px;
     background: rgb(47, 144, 224);
-    display: flex;
     align-content: center;
     align-items: center;
 }
 
 .logo {
-    margin-top: 20px;
-    margin-left: 20px;
+    float: left;
     width: 100px;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .msg {
-    margin-top: 20px;
-    margin-right: 20px;
-    width: 100px;
-    justify-content: right;
+    float: right;
+    width: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
 }
-
-.header ul {
-    display:flex;
-    width: 350px;
-}
-.header ul li{
-    position: relative;
-    list-style: none;
-    width: 70px;
-    height: 45px;
-} 
 
 .container {
     margin-top: 50px;

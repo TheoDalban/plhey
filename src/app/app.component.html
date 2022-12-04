@@ -56,16 +56,17 @@
 
 <div class="wrapper">
   <div class="header">
-<ul>
-  <li class="logo"><img src="../assets/logo.png"></li>
-  <li class="msg">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+  <ul>
+  <li><a routerLink="" class="logo"><img src="../assets/logo.png"></a></li>
+  <li>
+    <a routerLink="messages" class="msg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </a>
   </li>
 </ul>
 </div>
 </div>
 <div class="container">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 <app-navbar></app-navbar>
 
@@ -105,24 +106,3 @@
 
 </ul>
 </router-outlet>-->
-
-<!--<igx-bottom-nav>
-  <igx-bottom-nav-item>
-      <igx-bottom-nav-header>
-          <igx-icon>library_music</igx-icon>
-      </igx-bottom-nav-header>
-      <igx-bottom-nav-content>This is Item 1 content.</igx-bottom-nav-content>
-  </igx-bottom-nav-item>
-  <igx-bottom-nav-item>
-      <igx-bottom-nav-header>
-          <igx-icon>video_library</igx-icon>
-      </igx-bottom-nav-header>
-      <igx-bottom-nav-content>This is Item 2 content.</igx-bottom-nav-content>
-  </igx-bottom-nav-item>
-  <igx-bottom-nav-item>
-      <igx-bottom-nav-header>
-          <igx-icon>library_books</igx-icon>
-      </igx-bottom-nav-header>
-      <igx-bottom-nav-content>This is Item 3 content.</igx-bottom-nav-content>
-  </igx-bottom-nav-item>
-</igx-bottom-nav>-->

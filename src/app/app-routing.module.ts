@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsComponent} from "./forms/forms.component";
 import { CreateAccountComponent} from "./create-account/create-account.component"
 import { JeuComponent } from './jeu/jeu.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [{
   path: "",
@@ -25,22 +26,25 @@ const routes: Routes = [{
   path: "map",
   component: MapComponent,
 },
-  {
-    path: "profile",
-    component: ProfileComponent,
-  },
-  {
-    path:"login",
-    component: FormsComponent,
-  },
-  {
-    path: "create",
-    component: CreateAccountComponent,
-  },{
-    path: "login/jeu", 
-    component: JeuComponent,
-  }
-
+{
+  path: "profile",
+  component: ProfileComponent,
+},
+{
+  path: "messages",
+  component: MessagesComponent,
+},
+{
+  path:"login",
+  component: FormsComponent,
+},
+{
+  path: "create",
+  component: CreateAccountComponent,
+},{
+  path: "login/jeu", 
+  component: JeuComponent,
+}
 ];
 
 @NgModule({
