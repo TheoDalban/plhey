@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { EvtService } from './services/evt.service';
 import { MessagesComponent } from './messages/messages.component';
+import { EventItemComponent } from './event-item/event-item.component';
+import { EventPageComponent } from './event-page/event-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MessagesComponent } from './messages/messages.component';
     AddEventComponent,
     ProfileComponent,
     HomeComponent,
-    MessagesComponent
+    MessagesComponent,
+    EventItemComponent,
+    EventPageComponent
   ],
   imports: [
     BrowserModule,
