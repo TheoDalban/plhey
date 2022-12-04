@@ -9,6 +9,7 @@ import { FormsComponent} from "./forms/forms.component";
 import { CreateAccountComponent} from "./create-account/create-account.component"
 import { JeuComponent } from './jeu/jeu.component';
 import { MessagesComponent } from './messages/messages.component';
+import { EventPageComponent } from './event-page/event-page.component';
 
 const routes: Routes = [{
   path: "",
@@ -33,6 +34,10 @@ const routes: Routes = [{
 {
   path: "messages",
   component: MessagesComponent,
+},
+{
+  path: "event/:id",
+  component: EventPageComponent,
 },
 {
   path:"login",
