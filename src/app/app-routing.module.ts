@@ -10,6 +10,7 @@ import { CreateAccountComponent} from "./create-account/create-account.component
 import { JeuComponent } from './jeu/jeu.component';
 import { MessagesComponent } from './messages/messages.component';
 import { EventPageComponent } from './event-page/event-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 const routes: Routes = [{
   path: "",
@@ -38,6 +39,10 @@ const routes: Routes = [{
 {
   path: "event/:id",
   component: EventPageComponent,
+},
+{
+  path: "profile/:id",
+  component: ProfilePageComponent,
 },
 {
   path:"login",

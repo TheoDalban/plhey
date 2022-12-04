@@ -16,6 +16,9 @@ import { EvtService } from './services/evt.service';
 import { MessagesComponent } from './messages/messages.component';
 import { EventItemComponent } from './event-item/event-item.component';
 import { EventPageComponent } from './event-page/event-page.component';
+import { ProfileItemComponent } from './profile-item/profile-item.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfileService } from './services/profile.service';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,16 @@ import { EventPageComponent } from './event-page/event-page.component';
     HomeComponent,
     MessagesComponent,
     EventItemComponent,
-    EventPageComponent
+    EventPageComponent,
+    ProfileItemComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [EvtService],
+  providers: [EvtService, ProfileService],
   bootstrap: [AppComponent],
 })
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EvtService } from '../services/evt.service';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-search',
@@ -11,9 +12,10 @@ export class SearchComponent implements OnInit {
   searchText = "";
   type: string = 'event';
 
-  constructor(public evtService: EvtService) {}
+  constructor(public evtService: EvtService, public profileService: ProfileService) {}
 
   ngOnInit(): void {
+    this.profileService.profiles.push({"name": "Profile 1"});
     console.log(this.evtService.events.length);
     console.log(this.evtService.events[0].nom);
   }
@@ -35,6 +37,6 @@ export class SearchComponent implements OnInit {
 
   searchPeople() {
     this.searchText = 'Personne';
-    this.type = 'people';
+    this.type = 'profile';
   }
 }
