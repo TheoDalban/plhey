@@ -19,6 +19,9 @@ import { EventPageComponent } from './event-page/event-page.component';
 import { ProfileItemComponent } from './profile-item/profile-item.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileService } from './services/profile.service';
+import { SettingsComponent } from './settings/settings.component';
+import { SessionLoginService } from './services/session-login.service';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +39,16 @@ import { ProfileService } from './services/profile.service';
     EventItemComponent,
     EventPageComponent,
     ProfileItemComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    SettingsComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [EvtService, ProfileService],
+  providers: [EvtService, ProfileService, SessionLoginService],
   bootstrap: [AppComponent],
 })
 

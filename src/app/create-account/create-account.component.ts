@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionLoginService } from '../services/session-login.service';
 
 @Component({
   selector: 'app-create-account',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent {
+  constructor(public loginService: SessionLoginService) {}
 
+  login() {
+    this.loginService.log = true;
+  }
 }

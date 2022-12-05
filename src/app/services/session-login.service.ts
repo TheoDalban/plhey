@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class SessionLoginService {
-
+  log = false;
   LOGIN_URL = '/dj-ret-auth/login/';
   LOGOUT_URL = 'dj-rest-auth/logout/';
 }

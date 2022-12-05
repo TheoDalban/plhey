@@ -1,7 +1,4 @@
-<head>
-    <link rel="Stylesheet" href="./forms.component.scss">
-</head>
-<body>
+    <body>
     <section>
         <div class="color"></div>
         <div class="color"></div>
@@ -14,8 +11,7 @@
             <div class="square" style="--i:4;"></div>
             <div class="container">
                 <div class="form">
-                    <h2>Login Form</h2>
-                    <router-outlet>
+                    <h2>Connexion</h2>
                     <form>
                         <div class="inputBox">
                             <input type="text" placeholder="Username">
@@ -26,13 +22,12 @@
                         </div>
                         <br>
                         <div class="inputBox">
-                            <a  routerLink="jeu" href="../jeu/jeu.component.html"><input type="submit" value="Login"></a>
+                            <a (click)="login()"><input type="submit" value="Connexion"></a>
                         </div>
                     
-                        <p class="forget">Forgot Password ? <a href="#">Click Here</a></p>
-                        <p class="forget">Don't have an account ? <a href="#">Sign Up</a></p>
+                        <p class="forget">Mot de passe oublié ?<a (click)="login()">Clique ici</a></p>
+                        <p class="forget">Pas encore de compte ?<a routerLink="create">Inscris-toi !</a></p>
                     </form>
-                </router-outlet>
                 </div>
             </div>
         </div>

@@ -23,6 +23,7 @@
   border-radius: 10px;
   overflow: hidden;
   font-family: 'Farsan', cursive;
+  height: 500px;
 }
 
 .card-body {
@@ -35,7 +36,7 @@
 }
 
 .tag {
-  background: #cccccc;
+  background: #561521;
   border-radius: 50px;
   font-size: 12px;
   margin: 0;
@@ -43,15 +44,6 @@
   padding: 2px 10px;
   text-transform: uppercase;
   cursor: pointer;
-}
-.tag-teal {
-  background-color: #561521;
-}
-.tag-purple {
-  background-color: #5e76bf;
-}
-.tag-pink {
-  background-color: #cd5b9f;
 }
 
 .card-body p {

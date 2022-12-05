@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SessionLoginService } from './services/session-login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'Plhey';
+
+  constructor(public loginService: SessionLoginService) {}
 }

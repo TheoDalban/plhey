@@ -11,9 +11,15 @@ import { JeuComponent } from './jeu/jeu.component';
 import { MessagesComponent } from './messages/messages.component';
 import { EventPageComponent } from './event-page/event-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SplashComponent } from './splash/splash.component';
 
 const routes: Routes = [{
   path: "",
+  component: SplashComponent,
+},
+{
+  path: "home",
   component: HomeComponent,
 },
 {
@@ -31,6 +37,10 @@ const routes: Routes = [{
 {
   path: "profile",
   component: ProfileComponent,
+},
+{
+  path: "profile/settings",
+  component: SettingsComponent,
 },
 {
   path: "messages",
