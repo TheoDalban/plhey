@@ -13,6 +13,8 @@ import { EventPageComponent } from './event-page/event-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SplashComponent } from './splash/splash.component';
+import { JeuComponent2 } from './jeuPossede/jeuPossede.component';
+import { AmisComponent } from './amis/amis.component';
 
 const routes: Routes = [{
   path: "",
@@ -64,6 +66,14 @@ const routes: Routes = [{
 },{
   path: "login/jeu", 
   component: JeuComponent,
+},
+{
+  path: "login/jeu/jeuPossede", 
+  component: JeuComponent2,
+},
+{
+  path: "login/jeu/jeuPossede/amis", 
+  component: AmisComponent,
 }
 ];
 
