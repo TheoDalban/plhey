@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
     <h1>Ajoutez un évènement</h1>
     <form>
         <div class="txt">
@@ -16,3 +17,50 @@
             <input type="submit" (click)="addEvent()" value="Ajouter l'évènement" />
     </form>
     <p *ngFor="let event of evtService.events">{{event.nom}}</p>
+=======
+<head>
+    <link rel="Stylesheet" href="./forms.component.scss">
+  </head>
+  <body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="square" style="--i:0;"></div>
+            <div class="square" style="--i:1;"></div>
+            <div class="square" style="--i:2;"></div>
+            <div class="square" style="--i:3;"></div>
+            <div class="square" style="--i:4;"></div>
+            <div class="container">
+                <div class="form">
+                    <h2>Login Form</h2>
+                    <form>
+                        <div class="inputBox">
+                            <input type="text" name="name" placeholder="Nom de l'évènement" [(ngModel)]="name" />
+                        </div>
+                        <br/>
+                        <div class="inputBox">
+                            <input type="text" name="address" placeholder="Lieu de l'évènement" [(ngModel)]="address" />
+                      </div>
+                      <br>
+                      <div class="inputBox">
+                        <input type="text" name="type" placeholder="Type de l'évènement" [(ngModel)]="type" />
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="nb" placeholder="Nombre d'invités" [(ngModel)]="nb" />
+                  </div>
+                  <br>
+                        <div class="inputBox">
+                            <input type="submit" (click)="addEvent()" value="Ajouter" />
+                        </div>
+                        <br>
+                    </form>
+                    <p *ngFor="let event of evtService.events">{{event.nom}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </body>
+>>>>>>> Stashed changes

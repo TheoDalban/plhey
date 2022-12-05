@@ -11,6 +11,8 @@ import { ProfileService } from '../services/profile.service';
 export class SearchComponent implements OnInit {
   searchText = "";
   type: string = 'event';
+  people = [];
+  events = [];
 
   constructor(public evtService: EvtService, public profileService: ProfileService) {}
 
