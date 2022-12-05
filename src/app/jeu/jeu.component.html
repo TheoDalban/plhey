@@ -1,23 +1,45 @@
-<head>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="jeu.js"></script>
+<div class="container">
+  <div class="card" data-tilt>
+    <div class="content">
+      <h2>01</h2>
+      <h3>Card One</h3>
+      <p>azeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+  <div class="card" data-tilt>
+    <div class="content">
+      <h2>02</h2>
+      <h3>Card Two</h3>
+      <p>azeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+  <div class="card" data-tilt>
+    <div class="content">
+      <h2>03</h2>
+      <h3>Card Three</h3>
+      <p>azeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+  <div class="card" data-tilt>
+    <div class="content">
+      <h2>04</h2>
+      <h3>Card Four</h3>
+      <p>azeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+</div>
 
-</head>
+<script type="text/javascript" src="vanilla-tilt.js"></script>
+
 <script>
-    // https://boardgamegeek.com/xmlapi2/id?3
-console.log("jsrecu");
-const xhr = new XMLHttpRequest();
-
-xhr.onload = () => {
-  dump(xhr.responseXML.documentElement.nodeName);
-}
-
-xhr.onerror = () => {
-  dump("Error while getting XML.");
-}
-
-xhr.open("GET", "https://boardgamegeek.com/xmlapi2/id?3");
-xhr.responseType = "document";
-console.log(xhr.send());
+  VanillaTilt.init(document.querySelectorAll(".card"), {
+    max: 25,
+    speed: 400,
+    glare: true,
+    "max-glare": 1,
+  });
 </script>
-<p>bienvenu jeu</p>
