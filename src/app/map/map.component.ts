@@ -1,5 +1,22 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Map, NavigationControl } from 'maplibre-gl';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import * as L from 'leaflet';
+import { MarkerService } from '../services/marker.service';
+
+import { icon, Marker } from 'leaflet';
+const iconRetinaUrl = 'assets/marker-icon-2x.png';
+const iconUrl = 'assets/marker-icon.png';
+const shadowUrl = 'assets/marker-shadow.png';
+const iconDefault = icon({
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41]
+});
+Marker.prototype.options.icon = iconDefault;
 
 @Component({
   selector: 'map',
@@ -7,24 +24,40 @@ import { Map, NavigationControl } from 'maplibre-gl';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, AfterViewInit {
-  map: Map | undefined;
-  @ViewChild('map')
-  private mapContainer!: ElementRef<HTMLElement>;
+  public map!: L.Map;
+  icon = {
+    icon: L.icon({
+      iconSize: [ 25, 41 ],
+      iconAnchor: [ 13, 0 ],
+      iconUrl: '../../node_modules/leaflet/dist/images/marker-icon.png',
+      shadowUrl: '../../node_modules/leaflet/dist/images/marker-shadow.png'
+    })
+  };
 
-  constructor() { }
+  constructor(private markerService: MarkerService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    L.Icon.Default.imagePath = "assets/leaflet/";
+    const marker = L.marker([51.5, -0.09], this.icon).addTo(this.map);
   }
 
-  ngAfterViewInit() {
-    const initialState = { lng: 139.753, lat: 35.6844, zoom: 14 };
-
-    this.map = new Map({
-      container: this.mapContainer.nativeElement,
-      style: 'https://api.maptiler.com/maps/basic-v2/?key=SasQhOkax187ZEXzU6O0#1.0/0.00000/0.00000',
-      center: [initialState.lng, initialState.lat],
-      zoom: initialState.zoom
+  private initMap(): void {
+    this.map = L.map('map', {
+      center: [ 45.750000, 4.850000 ],
+      zoom: 6
     });
-    this.map.addControl(new NavigationControl({}), 'top-right');
+
+    const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        minZoom: 3,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      });
+
+      tiles.addTo(this.map);
+  }
+
+  ngAfterViewInit(): void {
+    this.initMap();
+    this.markerService.makeCitiesMarkers(this.map);
   }
 }

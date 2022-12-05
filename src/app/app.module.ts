@@ -22,6 +22,9 @@ import { ProfileService } from './services/profile.service';
 import { SettingsComponent } from './settings/settings.component';
 import { SessionLoginService } from './services/session-login.service';
 import { SplashComponent } from './splash/splash.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MarkerService } from './services/marker.service';
+import { PopupService } from './services/popup.service';
 
 @NgModule({
   declarations: [
@@ -47,8 +50,13 @@ import { SplashComponent } from './splash/splash.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [EvtService, ProfileService, SessionLoginService],
+  providers: [EvtService,
+              ProfileService,
+              SessionLoginService,
+              MarkerService,
+              PopupService],
   bootstrap: [AppComponent],
 })
 

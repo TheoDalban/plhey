@@ -1,20 +1,17 @@
-.map-wrap {
-  background-color: azure;
+.map-container {
+  background-color: aqua;
   position: relative;
   justify-content: center;
   width: 400px;
-  height: 600px;
-  margin-left: -30px;
+  height: 590px;
+  margin-left: -15px;
 }
 
-.map {
-  position: absolute;
-  width: 100%;
+.map-frame {
+  border: 2px solid black;
   height: 100%;
 }
 
-.watermark {
-  position: absolute;
-  bottom: 10px;
-  z-index: 999;
+#map {
+  height: 100%;
 }
