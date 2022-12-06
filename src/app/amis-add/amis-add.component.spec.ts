@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AmisComponent } from './amis.component';
+import { AmisAddComponent } from './amis-add.component';
 
-describe('AmisComponent', () => {
-  let component: AmisComponent;
-  let fixture: ComponentFixture<AmisComponent>;
+describe('AmisAddComponent', () => {
+  let component: AmisAddComponent;
+  let fixture: ComponentFixture<AmisAddComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AmisComponent ]
+      declarations: [ AmisAddComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AmisComponent);
+    fixture = TestBed.createComponent(AmisAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
