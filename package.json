@@ -29,6 +29,7 @@
     "igniteui-angular": "^15.0.1",
     "leaflet": "^1.7.1",
     "maplibre-gl": "^1.15.3",
+    "node": "^19.2.0",
     "platform-browser": "^0.0.1-security",
     "rxjs": "~7.5.0",
     "stream-chat": "^8.1.2",

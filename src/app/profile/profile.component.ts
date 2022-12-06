@@ -18,6 +18,6 @@ export class ProfileComponent {
 
   settings() {
     console.log("settings");
-    setTimeout(() => {this.monRouteur.navigateByUrl("settings")}, 500);
+    setTimeout(() => {this.monRouteur.navigateByUrl("profile/settings")}, 500);
   }
 }

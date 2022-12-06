@@ -68,7 +68,7 @@ section .color:nth-child(3)
 .form p {
     position: relative;
     color: #fff;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 40px;
@@ -90,6 +90,7 @@ section .color:nth-child(3)
     outline: none;
     padding: 10px 20px;
     border-radius: 35px;
+    font-size: 15px;
 }
 
 .form .inputBox input::placeholder{
