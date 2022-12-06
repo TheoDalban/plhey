@@ -1,8 +1,16 @@
-<p>Recherche</p>
-<form>
-    <input type="text" id="searchtxt" name="searchtxt" [(ngModel)]="searchText" />
-    <button (click)="search(searchText)">Ok</button>
-</form>
+<div class="container">
+    <div class="form">
+        <h2>Recherche</h2>
+        <form>
+            <div class="inputBox">
+                <input type="text" id="searchtxt" name="searchtxt" [(ngModel)]="searchText" />
+            </div>
+            <br>
+            <div class="inputBox">
+            <input class="btn" type="submit" (click)="search(searchText)" value="Ok"/>
+        </div>
+        </form>
+
 <button (click)="searchEvent()">Evènement</button><br/>
 <button (click)="searchPeople()">Personne</button>
 <div *ngIf="type=='event'"><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}"></app-event-item></p>
