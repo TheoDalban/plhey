@@ -1,7 +1,7 @@
 
             <div class="container">
                 <div class="form">
-                    <h2>Login Form</h2>
+                    <h2>Ajoute un évènement</h2>
                     <form>
                         <div class="inputBox">
                             <input type="text" name="name" placeholder="Nom de l'évènement" [(ngModel)]="name" />
@@ -16,7 +16,7 @@
                     </div>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="nb" placeholder="Nombre d'invités" [(ngModel)]="nb" />
+                        <input type="number" name="nb" placeholder="Nombre d'invités" min="1" max="20" [(ngModel)]="nb" />
                   </div>
                   <br>
                         <div class="inputBox">
@@ -24,5 +24,5 @@
                         </div>
                         <br>
                     </form>
-                    <p *ngFor="let event of evtService.events">{{event.nom}}</p>
+                    <p>{{add}}</p>
                 </div>

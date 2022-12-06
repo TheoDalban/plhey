@@ -14,4 +14,8 @@ export class FormsComponent {
     this.loginService.log = true;
     setTimeout(() => {this.monRouteur.navigateByUrl("home")}, 500);
   }
+
+  create() {
+    setTimeout(() => {this.monRouteur.navigateByUrl("create")}, 500);
+  }
 }

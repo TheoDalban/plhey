@@ -1,3 +1,7 @@
-<div class="container">
-    <p *ngFor="let event of evtService.events">{{event}}</p>
+<div class="contain">
+    <div class="form">
+        <h2>Tous les évènements</h2>
+    </div>
+</div>
+<div><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item></p>
 </div>

@@ -8,7 +8,7 @@ import { ProfileService } from '../services/profile.service';
   styleUrls: ['./profile-page.component.scss']
 })
 export class ProfilePageComponent {
-  @Input() name = "Event 1";
+  @Input() name = "Julie Délivre";
   @Input() id = 0;
 
   constructor(private monActRouteur: ActivatedRoute,public profileService: ProfileService) {}

@@ -17,7 +17,9 @@ export class SearchComponent implements OnInit {
   constructor(public evtService: EvtService, public profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.profileService.profiles.push({"name": "Profile 1"});
+    if (this.profileService.profiles.length == 0) {
+      this.profileService.profiles.push({"name": "Julie Délivre"});     
+    } 
     console.log(this.evtService.events.length);
     console.log(this.evtService.events[0].nom);
   }

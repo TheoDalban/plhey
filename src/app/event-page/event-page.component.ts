@@ -13,6 +13,7 @@ export class EventPageComponent {
   @Input() type = "Event 1";
   @Input() nb = "Event 1";
   @Input() id = 0;
+  @Input() profilname = "Julie Délivre";
 
   constructor(private monActRouteur: ActivatedRoute,public evtService: EvtService) {}
 

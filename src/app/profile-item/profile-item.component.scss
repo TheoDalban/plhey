@@ -39,8 +39,8 @@
 .btn {
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background:  #561521;
-	border-radius: 5px;
+	background:  #469DDE;
+	border-radius: 20px;
     position: relative;
     overflow: hidden;
 	cursor: pointer;
@@ -52,7 +52,7 @@
 }
 
 .btn:hover{transform: translateY(-1px);
-	background: #469DDE;}
+	background: #efd229;}
 
 .btn span {
 	font-family: 'Farsan', cursive;

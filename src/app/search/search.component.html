@@ -1,4 +1,4 @@
-<div class="container">
+<div class="contain">
     <div class="form">
         <h2>Recherche</h2>
         <form>
@@ -10,10 +10,13 @@
             <input class="btn" type="submit" (click)="search(searchText)" value="Ok"/>
         </div>
         </form>
-
-<button (click)="searchEvent()">Evènement</button><br/>
-<button (click)="searchPeople()">Personne</button>
-<div *ngIf="type=='event'"><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}"></app-event-item></p>
+        <div class="search">
+        <button class="btn" (click)="searchEvent()">Evènement</button>
+        <button class="btn" (click)="searchPeople()">Personne</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="type=='event'"><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item></p>
 </div>
 <div *ngIf="type=='profile'"><p *ngFor="let profile of profileService.profiles;let i = index"><app-profile-item index={{i}} name="{{profile.name}}"></app-profile-item></p>
 </div>

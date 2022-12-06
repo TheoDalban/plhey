@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
+  @Input() name = "Julie Délivre";
+  @Input() id = 0;
 
+  constructor(public profileService: ProfileService) {}
+
+  ngOnInit(): void {
+    this.name = this.profileService.profiles[this.id].name;
+  }
 }

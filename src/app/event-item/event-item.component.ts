@@ -11,7 +11,7 @@ export class EventItemComponent {
   @Input() name = "Event 1";
   @Input() address = "Event 1";
   @Input() type = "Event 1";
-  @Input() nb = "Event 1";
+  @Input() nb = "0";
 
   constructor(private monRouteur: Router) {}
 

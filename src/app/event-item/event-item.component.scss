@@ -14,24 +14,24 @@
 	position: relative;
 	text-align: left;
 	overflow: hidden;
-	padding: 15px;
+	padding: 3px;
 	height: 100%;
 	float: left;
-	width: 60%;
+	width: 70%;
 }
 
 #container .info h1{
 	font-family: 'Farsan', cursive;
 	display: inline-block;
 	position: relative;
-	font-size: 20px;
+	font-size: 18px;
 	color: #000000;
 	margin: 0;
 }
 
 #container .info > p {
     font-family: 'Farsan', cursive;
-	font-size: 14px;
+	font-size: 13px;
 	color: #000000;
     margin: 0;
 }
@@ -39,8 +39,8 @@
 .btn {
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background:  #561521;
-	border-radius: 5px;
+	background:  #469DDE;
+	border-radius: 20px;
     position: relative;
     overflow: hidden;
 	cursor: pointer;
@@ -52,7 +52,7 @@
 }
 
 .btn:hover{transform: translateY(-1px);
-	background: #469DDE;}
+	background: #efd229;}
 
 .btn span {
 	font-family: 'Farsan', cursive;
@@ -68,7 +68,7 @@
 	display: flex;
 	position: relative;
 	height: 100%;
-	width: 40%;
+	width: 30%;
     justify-content: center;
     align-items: center;
 }

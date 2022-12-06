@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SessionLoginService } from '../services/session-login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -7,9 +8,10 @@ import { SessionLoginService } from '../services/session-login.service';
   styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent {
-  constructor(public loginService: SessionLoginService) {}
+  constructor(private monRouteur: Router, public loginService: SessionLoginService) {}
 
-  login() {
+  inscription() {
     this.loginService.log = true;
+    setTimeout(() => {this.monRouteur.navigateByUrl("home")}, 500);
   }
 }
