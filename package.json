@@ -26,6 +26,7 @@
     "@types/node": "^18.11.10",
     "angular": "^1.8.3",
     "flowbite": "^1.5.4",
+    "git": "^0.1.5",
     "igniteui-angular": "^15.0.1",
     "leaflet": "^1.7.1",
     "maplibre-gl": "^1.15.3",
