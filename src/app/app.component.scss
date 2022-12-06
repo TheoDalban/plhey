@@ -35,7 +35,8 @@
 .container {
     margin-top: 50px;
     margin-bottom: 15px;
-    background: linear-gradient(to bottom,#469dde,#efd229);
+    background: radial-gradient(1500px, #469dde, #fff);
+    //background: #469dde;
     width: 400px;
     height: 600px;
 }
