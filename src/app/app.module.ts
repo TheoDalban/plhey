@@ -25,6 +25,8 @@ import { SplashComponent } from './splash/splash.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkerService } from './services/marker.service';
 import { PopupService } from './services/popup.service';
+import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
+import { AmisAddComponent } from './amis-add/amis-add.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { PopupService } from './services/popup.service';
     ProfileItemComponent,
     ProfilePageComponent,
     SettingsComponent,
-    SplashComponent
+    SplashComponent,
+    JeuLibComponent,
+    AmisAddComponent
   ],
   imports: [
     BrowserModule,

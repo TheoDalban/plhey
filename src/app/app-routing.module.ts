@@ -13,8 +13,8 @@ import { EventPageComponent } from './event-page/event-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SplashComponent } from './splash/splash.component';
-import { JeuComponent2 } from './jeuPossede/jeuPossede.component';
-import { AmisComponent } from './amis/amis.component';
+import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
+import { AmisAddComponent } from './amis-add/amis-add.component';
 
 const routes: Routes = [{
   path: "",
@@ -68,12 +68,12 @@ const routes: Routes = [{
   component: JeuComponent,
 },
 {
-  path: "login/jeu/jeuPossede", 
-  component: JeuComponent2,
+  path: "login/jeu/jeu-lib", 
+  component: JeuLibComponent,
 },
 {
-  path: "login/jeu/jeuPossede/amis", 
-  component: AmisComponent,
+  path: "login/jeu/jeu-lib/amis", 
+  component: AmisAddComponent,
 }
 ];
 
