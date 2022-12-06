@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProfileService } from '../services/profile.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,9 +11,13 @@ export class ProfileComponent {
   @Input() name = "Julie Délivre";
   @Input() id = 0;
 
-  constructor(public profileService: ProfileService) {}
+  constructor(private monRouteur: Router, public profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.name = this.profileService.profiles[this.id].name;
+  }
+
+  settings() {
+    console.log("settings");
+    setTimeout(() => {this.monRouteur.navigateByUrl("settings")}, 500);
   }
 }
