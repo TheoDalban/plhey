@@ -15,7 +15,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { SplashComponent } from './splash/splash.component';
 import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
-import { FullscreenControl } from 'maplibre-gl';
+import { AddEvent2Component } from './add-event2/add-event2.component';
 
 const routes: Routes = [{
   path: "",
@@ -32,6 +32,10 @@ const routes: Routes = [{
 {
   path: "add",
   component: AddEventComponent,
+},
+{
+  path: "add/next",
+  component: AddEvent2Component,
 },
 {
   path: "map",

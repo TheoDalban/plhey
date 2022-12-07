@@ -19,10 +19,9 @@
                         <input type="number" name="nb" placeholder="Nombre d'invités" min="1" max="20" [(ngModel)]="nb" />
                   </div>
                   <br>
-                        <div class="inputBox">
-                            <input type="submit" (click)="addEvent()" value="Ajouter" />
+                        <div class="inputBox" routerLink="add/next">
+                            <input type="submit" value="Continuer" />
                         </div>
                         <br>
                     </form>
-                    <p>{{add}}</p>
                 </div>

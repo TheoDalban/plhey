@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.app {
+    display: inline-block;
+    justify-content: center;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;

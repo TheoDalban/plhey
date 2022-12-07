@@ -8,18 +8,34 @@ import { MarkerService } from '../services/marker.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, AfterViewInit {
-  public map!: L.Map;
+  map!: L.Map;
   icon = {
     icon: L.icon({
-      iconSize: [ 30, 30 ],
+      iconSize: [ 40, 40 ],
       iconAnchor: [ 13, 0 ],
       iconUrl: '../../assets/marker.png',
     })
   };
 
-  constructor(private markerService: MarkerService) { }
+  axios = require('axios');
+  params = {
+    access_key: '56a31143cc4ed614dbc4820933d1df34',
+    query: 'Lyon France'
+  };
 
-  ngOnInit(): void {}
+  coord = [];
+
+  constructor(private markerService: MarkerService) {}
+
+  ngOnInit(): void {
+    this.axios.get('http://api.positionstack.com/v1/forward?access_key='+this.params['access_key']+'&query='+this.params['query'])
+    .then((response: { data: any; }) => {
+      console.log(response.data);
+      return this.coord;
+    }).catch((error: any) => {
+      console.log(error)
+    });
+  }
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -34,8 +50,8 @@ export class MapComponent implements OnInit, AfterViewInit {
       });
       tiles.addTo(this.map);
     
-    const marker = L.marker([45.750000, 4.850000], this.icon);
-    marker.addTo(this.map);
+    //const marker = L.marker([this.coord], this.icon);
+    //marker.addTo(this.map);
   }
 
   ngAfterViewInit(): void {

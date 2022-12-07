@@ -52,7 +52,8 @@
     margin-left: 25%;
   }
 </style>
-
+<div style="display: flex; justify-content: center;">
+<div class="app">
 <div class="wrapper">
   <div class="header">
   <ul>
@@ -68,7 +69,8 @@
   <router-outlet></router-outlet>
 </div>
 <div *ngIf="loginService.log==true"><app-navbar></app-navbar></div>
-
+</div>
+</div>
 <!--
 <router-outlet id="div">
 <ul id="div" class="w-48 text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
