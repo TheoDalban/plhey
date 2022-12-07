@@ -2,7 +2,7 @@
 
 #container{
 	box-shadow: 0 5px 5px #efd229;
-	background: rgba(255, 255, 255, 0.90);
+	background-color: white;
 	text-align: center;
 	border-radius: 5px;
 	overflow: hidden;
@@ -14,7 +14,7 @@
 	position: relative;
 	text-align: left;
 	overflow: hidden;
-	padding: 15px;
+	padding: 3px;
 	height: 100%;
 	float: left;
 	width: 70%;
@@ -24,14 +24,14 @@
 	font-family: 'Poppins', sans-serif;
 	display: inline-block;
 	position: relative;
-	font-size: 20px;
+	font-size: 18px;
 	color: #000000;
 	margin: 0;
 }
 
 #container .info > p {
     font-family: 'Poppins', sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	color: #000000;
     margin: 0;
 }

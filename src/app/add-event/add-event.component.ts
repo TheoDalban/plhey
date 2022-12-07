@@ -10,18 +10,13 @@ export class AddEventComponent implements OnInit {
   name = "";
   address = "";
   type = "";
-  nb = 0;
-  add = "";
+  nb = 1;
 
   constructor(public evtService: EvtService) {}
 
-  ngOnInit(): void {
-    this.add = "";
-  }
+  ngOnInit(): void {}
 
-  addEvent() {
-    this.evtService.events.push({"name": this.name, "address": this.address, "type": this.type, "nb": String(this.nb)});
-    console.log(this.evtService.events[0].nb);
-    this.add = "Evènement ajouté !";
+  continue() {
+    
   }
 }

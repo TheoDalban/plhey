@@ -20,7 +20,6 @@ export class AddEvent2Component implements OnInit {
   }
 
   addEvent() {
-    this.evtService.events.push({"name": this.name, "address": this.address, "type": this.type, "nb": String(this.nb)});
     console.log(this.evtService.events[0].nb);
     this.add = "Evènement ajouté !";
   }

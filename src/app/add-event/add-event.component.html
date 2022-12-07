@@ -1,27 +1,60 @@
-
-            <div class="container">
-                <div class="form">
-                    <h2>Ajoute un évènement</h2>
-                    <form>
-                        <div class="inputBox">
-                            <input type="text" name="name" placeholder="Nom de l'évènement" [(ngModel)]="name" />
-                        </div>
-                        <br/>
-                        <div class="inputBox">
-                            <input type="text" name="address" placeholder="Lieu de l'évènement" [(ngModel)]="address" />
-                      </div>
-                      <br>
-                      <div class="inputBox">
-                        <input type="text" name="type" placeholder="Type de l'évènement" [(ngModel)]="type" />
-                    </div>
-                    <br>
-                    <div class="inputBox">
-                        <input type="number" name="nb" placeholder="Nombre d'invités" min="1" max="20" [(ngModel)]="nb" />
-                  </div>
-                  <br>
-                        <div class="inputBox" routerLink="next">
-                            <input type="submit" value="Continuer" />
-                        </div>
-                        <br>
-                    </form>
+<div class="container">
+    <div class="form">
+        <h2>Ajoute un évènement</h2>
+        <form>
+            <!--
+                Lieu
+                Horaire Date
+                Profil de la personne
+                Description
+                Nb de personnes et âges
+                Icones Animaux friendly, tabac, accessibilité
+            -->
+            <div class="inputBox">
+                <input type="text" name="name" placeholder="Titre" [(ngModel)]="name" />
+            </div>
+            <div class="inputBox">
+                <select name="type" id="type" [(ngModel)]="type">
+                    <option disabled value="">Thème de l'évènement</option>
+                    <option value="ambiance">Jeux d'ambiance</option>
+                    <option value="aventure">Jeux d'aventure</option>
+                    <option value="carte">Jeux de cartes</option>
+                    <option value="cerveau">Jeux de connaissances</option>
+                    <option value="chance">Jeux de hasard</option>
+                    <option value="cooperation">Jeux coopératifs</option>
+                    <option value="duel">Jeux d'affrontement</option>
+                    <option value="de">Jeux de dés</option>
+                    <option value="enquete">Jeux d'enquête</option>
+                    <option value="loup">Loup-garou</option>
+                    <option value="role">Jeux de rôle</option>
+                    <option value="strategie">Jeux de stratégie</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="name" placeholder="Titre" [(ngModel)]="name" />
+            </div>
+            <div class="inputBox">
+                <input type="text" name="name" placeholder="Titre" [(ngModel)]="name" />
+            </div>
+            <div class="inputBox">
+                <input type="text" name="address" placeholder="Lieu de l'évènement" [(ngModel)]="address" />
+            </div>
+            <div class="inputBox">
+            <input type="text" name="type" placeholder="Type de l'évènement" [(ngModel)]="type" />
+            </div>
+            <div style="display: flex; justify-content: space-around;">
+                <div class="inputNb">
+                    <p>Participants</p><input type="number" name="nb" placeholder=1 min="1" max="20" [(ngModel)]="nb" />
                 </div>
+                <div class="inputNb">
+                    <p>Participants</p><input type="number" name="nb" placeholder=1 min="1" max="20" [(ngModel)]="nb" />
+                </div>
+            </div>
+            <br>
+            <div class="inputBox">
+                <input routerLink="next" type="submit" value="Continuer" />
+            </div>
+            <br>
+        </form>
+    </div>
+</div>

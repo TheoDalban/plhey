@@ -23,23 +23,11 @@ export class SearchComponent implements OnInit {
     console.log(this.evtService.events.length);
   }
 
-  search(txt: any) {
-    if (this.type == 'event') {
-      this.searchEvent;
-      console.log(txt);
-    } else {
-      this.searchPeople;
-      console.log(txt);
-    }
-  }
-
   searchEvent() {
-    this.searchText = 'Evènement';
     this.type = 'event';
   }
 
   searchPeople() {
-    this.searchText = 'Personne';
     this.type = 'profile';
   }
 }

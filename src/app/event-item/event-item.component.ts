@@ -18,6 +18,10 @@ export class EventItemComponent {
     this.icon = this.type+".png";
   }
 
+  ngOnInit(): void {
+    console.log(this.name);
+  }
+
   showEvent(i: string) {
     setTimeout(() => {this.monRouteur.navigateByUrl("event/"+i)}, 500);
   }

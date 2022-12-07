@@ -6,9 +6,6 @@
                 <input type="text" id="searchtxt" name="searchtxt" [(ngModel)]="searchText" />
             </div>
             <br>
-            <div class="inputBox">
-            <input class="btn" type="submit" (click)="search(searchText)" value="Ok"/>
-        </div>
         </form>
         <div class="search">
         <button class="btn" (click)="searchEvent()">Evènement</button>
@@ -16,7 +13,17 @@
         </div>
     </div>
 </div>
-<div class="list" *ngIf="type=='event'"><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item></p>
+<div class="list" *ngIf="type=='event'">
+    <ng-container *ngFor="let event of evtService.events;let i = index">
+        <p *ngIf="event.name.includes(searchText)">
+            <app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item>
+        </p> 
+    </ng-container>
 </div>
-<div class="list" *ngIf="type=='profile'"><p *ngFor="let profile of profileService.profiles;let i = index"><app-profile-item index={{i}} name="{{profile.name}}"></app-profile-item></p>
+<div class="list" *ngIf="type=='profile'">
+    <ng-container *ngFor="let profile of profileService.profiles;let i = index">
+        <p *ngIf="profile.name.includes(searchText)">
+            <app-profile-item index={{i}} name="{{profile.name}}"></app-profile-item>
+        </p> 
+    </ng-container>
 </div>
