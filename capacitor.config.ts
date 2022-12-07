@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.example.app',
-  appName: 'angular-mobile-app',
+  appId: 'fr.app.plhey',
+  appName: 'Plhey',
   webDir: 'dist',
   bundledWebRuntime: false
 };
