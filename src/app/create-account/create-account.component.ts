@@ -12,6 +12,5 @@ export class CreateAccountComponent {
 
   inscription() {
     this.loginService.log = true;
-    setTimeout(() => {this.monRouteur.navigateByUrl("home")}, 500);
   }
 }

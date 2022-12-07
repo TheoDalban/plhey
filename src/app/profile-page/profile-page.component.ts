@@ -10,6 +10,7 @@ import { ProfileService } from '../services/profile.service';
 export class ProfilePageComponent {
   @Input() name = "Julie Délivre";
   @Input() id = 0;
+  @Input() phone = "0770787997";
 
   constructor(private monActRouteur: ActivatedRoute,public profileService: ProfileService) {}
 

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent {
   @Input() name = "Julie Délivre";
   @Input() id = 0;
+  @Input() phone = "0770787997";
 
   constructor(private monRouteur: Router, public profileService: ProfileService) {}
 

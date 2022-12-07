@@ -15,6 +15,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { SplashComponent } from './splash/splash.component';
 import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
+import { FullscreenControl } from 'maplibre-gl';
 
 const routes: Routes = [{
   path: "",
@@ -64,16 +65,19 @@ const routes: Routes = [{
   path: "create",
   component: CreateAccountComponent,
 },{
-  path: "login/jeu", 
+  path: "create/jeu", 
   component: JeuComponent,
 },
 {
-  path: "login/jeu/jeu-lib", 
+  path: "create/jeu/jeu-lib", 
   component: JeuLibComponent,
 },
 {
-  path: "login/jeu/jeu-lib/amis", 
+  path: "create/jeu/jeu-lib/amis", 
   component: AmisAddComponent,
+},{
+  path: "create/jeu/jeu-lib/amis/home",
+  component: HomeComponent,
 }
 ];
 
