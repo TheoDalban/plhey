@@ -33,6 +33,7 @@
     list-style: none;
     width: 70px;
     height: 45px;
+    display: flex;
 } 
 
 .navigation ul li a{
@@ -89,4 +90,9 @@
 .navigation ul li:hover.active a .icon{
     opacity: 1;
     transform: translateY(-10px);
+}
+
+.navigation ul li:hover.active a .icon svg {
+    background-color: #469DDE;
+    border-radius: 5px;
 }

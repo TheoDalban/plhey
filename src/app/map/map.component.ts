@@ -20,24 +20,24 @@ export class MapComponent implements OnInit, AfterViewInit {
   axios = require('axios');
   params = {
     access_key: '56a31143cc4ed614dbc4820933d1df34',
-    query: 'Lyon France'
+    query: '3 rue flachet villeurbanne France'
   };
-
-  coord = [];
 
   constructor(private markerService: MarkerService) {}
 
-  ngOnInit(): void {
-    this.axios.get('http://api.positionstack.com/v1/forward?access_key='+this.params['access_key']+'&query='+this.params['query'])
-    .then((response: { data: any; }) => {
-      console.log(response.data);
-      return this.coord;
-    }).catch((error: any) => {
-      console.log(error)
-    });
-  }
+  ngOnInit(): void {}
 
   private initMap(): void {
+    this.axios.get('http://api.positionstack.com/v1/forward?access_key='+this.params['access_key']+'&query='+this.params['query'])
+    .then((response: { data: any; }) => {
+      let coord = response.data.data[0];
+      console.log(coord);
+      const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
+      marker.addTo(this.map);
+    }).catch((error: any) => {
+      console.log(error);
+    });
+
     this.map = L.map('map', {
       center: [ 45.750000, 4.850000 ],
       zoom: 12
@@ -49,9 +49,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       });
       tiles.addTo(this.map);
-    
-    //const marker = L.marker([this.coord], this.icon);
-    //marker.addTo(this.map);
   }
 
   ngAfterViewInit(): void {

@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
 })
 export class EventItemComponent {
   @Input() index = "";
-  @Input() name = "Event 1";
-  @Input() address = "Event 1";
-  @Input() type = "Event 1";
+  @Input() name = "";
+  @Input() address = "";
+  @Input() type = "";
+  @Input() icon = "";
   @Input() nb = "0";
 
-  constructor(private monRouteur: Router) {}
+  constructor(private monRouteur: Router) {
+    this.icon = this.type+".png";
+  }
 
   showEvent(i: string) {
     setTimeout(() => {this.monRouteur.navigateByUrl("event/"+i)}, 500);

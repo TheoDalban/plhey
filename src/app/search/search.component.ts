@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
       this.profileService.profiles.push({"name": "Julie Délivre"});     
     } 
     console.log(this.evtService.events.length);
-    console.log(this.evtService.events[0].nom);
   }
 
   search(txt: any) {

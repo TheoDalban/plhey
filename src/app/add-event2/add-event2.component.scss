@@ -4,36 +4,6 @@
     width: 100%;
 }
 
-
-
-/*
-section .color:nth-child(1)
-{
-    top: -350px;
-    width: 300px;
-    height: 300px;
-    background-color: #ff359b;
-}
-
-section .color:nth-child(2)
-{
-    bottom: -150px;
-    left: 100px;
-    width: 300px;
-    height: 300px;
-    background: #fffd87;
-}
-
-section .color:nth-child(3)
-{
-    bottom: 50px;
-    right: 100px;
-    width: 300px;
-    height: 300px;
-    background: #00d2ff;
-}  
- */
-
 .container {
     position: relative;
     width: 100%;
@@ -47,6 +17,7 @@ section .color:nth-child(3)
     border: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 0;
 }
 
 .form {
@@ -100,7 +71,7 @@ section .color:nth-child(3)
 .form .inputBox input[type="submit"]{
     background: #fff;
     color: #666;
-    max-width: 100px;
+    width: auto;
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: 600;

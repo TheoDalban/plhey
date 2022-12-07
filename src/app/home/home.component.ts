@@ -11,8 +11,8 @@ export class HomeComponent {
 
   ngOnInit(): void {
     if (this.evtService.events.length == 0) {
-      this.evtService.events.push({"name": "Soirée jeux de rôle", "address": "1 rue Victor Hugo, Lyon 5", "type": "Jeu de rôle", "nb": "15"});
-      this.evtService.events.push({"name": "Loup-garou party", "address": "10 avenue du Maréchal, Vénissieux", "type": "Loup-garou", "nb": "9"});  
+      this.evtService.events.push({"name": "Soirée jeux de rôle", "address": "1 rue Victor Hugo, Lyon 5", "type": "role", "nb": "15"});
+      this.evtService.events.push({"name": "Loup-garou party", "address": "10 avenue du Maréchal, Vénissieux", "type": "loup", "nb": "9"});  
     } 
   }
 }

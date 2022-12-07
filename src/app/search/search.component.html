@@ -16,7 +16,7 @@
         </div>
     </div>
 </div>
-<div *ngIf="type=='event'"><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item></p>
+<div class="list" *ngIf="type=='event'"><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item></p>
 </div>
-<div *ngIf="type=='profile'"><p *ngFor="let profile of profileService.profiles;let i = index"><app-profile-item index={{i}} name="{{profile.name}}"></app-profile-item></p>
+<div class="list" *ngIf="type=='profile'"><p *ngFor="let profile of profileService.profiles;let i = index"><app-profile-item index={{i}} name="{{profile.name}}"></app-profile-item></p>
 </div>

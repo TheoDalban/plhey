@@ -1,17 +1,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="container">	
 	<div class="info">
-	<h1>{{name}}</h1>
-<p class="information">Lieu : {{address}}</p>
-<p class="information">Type : {{type}}</p>	
-<p class="information">Participants max : {{nb}}</p>
-</div>
-
-<div class="control">
-	<button class="btn">
-   <span class="participe" (click)="showEvent(index)">Voir plus</span>
- </button>
-</div>		
+		<div style="display: flex; align-items: center;">
+			<img src="../../assets/{{type}}.png" height="30px" width="30px"/>
+			<h1>{{name}}</h1>	
+		</div>
+		<br/>
+		<p class="information">Lieu : {{address}}</p>
+		<p class="information">Participants max : {{nb}}</p>
+	</div>
+	<div class="control">
+		<button class="btn">
+		<span class="participe" (click)="showEvent(index)">Voir plus</span>
+		</button>
+	</div>		
 </div>
 
 
