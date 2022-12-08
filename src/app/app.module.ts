@@ -28,6 +28,7 @@ import { PopupService } from './services/popup.service';
 import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AddEvent2Component } from './add-event2/add-event2.component';
     SplashComponent,
     JeuLibComponent,
     AmisAddComponent,
-    AddEvent2Component
+    AddEvent2Component,
+    MyEventsComponent
   ],
   imports: [
     BrowserModule,

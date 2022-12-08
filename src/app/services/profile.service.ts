@@ -6,4 +6,5 @@ import { Injectable } from '@angular/core';
 
 export class ProfileService {
     profiles = new Array();
+    myprofile = new Array();
 }

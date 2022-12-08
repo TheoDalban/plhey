@@ -30,29 +30,31 @@ export class MapComponent implements OnInit {
       minZoom: 3,    
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'   
     });    
-      tiles.addTo(this.map);
-    }
-     
-  private initMap(axios: any, params: any): void {
-    axios.get('http://api.positionstack.com/v1/forward?access_key='+params['access_key']+'&query='+params['query'])
-    .then((response: { data: any; }) => {
-      let coord = response.data.data[0];
-      console.log(coord)
-      for (let i=0; i<this.evtService.events.length; i++) {
-        const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
-        marker.addTo(this.map); 
-      }
-    }).catch((error: any) => {
-      console.log(error);
-    });
+    tiles.addTo(this.map);
+    this.addEvent();
   }
-    
-  addEvent(address: String) {
+     
+  private initMap(address: any): void {
     let axios = require('axios');
     let params = { 
       access_key: '56a31143cc4ed614dbc4820933d1df34',
       query: address
     };
-    this.initMap(axios, params);
+    axios.get('http://api.positionstack.com/v1/forward?access_key='+params['access_key']+'&query='+params['query'])
+    .then((response: { data: any; }) => {
+      let coord = response.data.data[0];
+      console.log(coord)
+      const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
+      marker.addTo(this.map); 
+    }).catch((error: any) => {
+      console.log(error);
+    });
+  }
+    
+  addEvent() {
+    for (let i=0; i<this.evtService.myevents.length; i++) {
+      let address = this.evtService.myevents[i].rue+" "+this.evtService.myevents[i].ville+" "+this.evtService.myevents[i].cp+" "+this.evtService.myevents[i].country;
+      this.initMap(address);
+    }
   }
 }

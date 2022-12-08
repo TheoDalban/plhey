@@ -1,34 +1,38 @@
 
-          <div class="container">
-              <div class="form">
-                  <h2>S'inscrire</h2>
-                  <form>
-                      <div class="inputBox">
-                          <input type="text" placeholder="Nom">
-                      </div>
-                      <br>
-                      <div class="inputBox">
-                        <input type="text" placeholder="Prénom">
-                    </div>
-                    <br>
-                    <div class="inputBox">
-                      <input type="email" placeholder="Email">
-                  </div>
-                  <br>
-                  <div class="inputBox">
-                    <input type="date" />
-                </div>
-                <br>
-                      <div class="inputBox">
-                          <input type="password" placeholder="Mot de passe">
-                      </div>
-                      <br>
-                      <div class="inputBox">
-                        <input type="password" placeholder="Confirmer mot de passe">
-                    </div>
-                    <br>
-                      <div class="inputBox">
-                          <input type="submit" (click)="inscription()" value="S'inscrire" routerLink="jeu">
-                      </div>
-                  </form>
-              </div>
+<div class="container">
+<div class="form">
+    <h2>S'inscrire</h2>
+    <form>
+        <div class="inputBox">
+            <input type="text" name="name" placeholder="Nom" [(ngModel)]="name" />
+        </div>
+        <br>
+        <div class="inputBox">
+        <input type="text" name="surname" placeholder="Prénom" [(ngModel)]="surname" />
+    </div>
+    <br>
+    <div class="inputBox">
+        <input type="text" name="mail" placeholder="E-mail" [(ngModel)]="mail" />
+    </div>
+    <br>
+    <div class="inputBox">
+        <input type="text" name="tel" placeholder="Téléphone" [(ngModel)]="tel" />
+    </div>
+    <br>
+    <div class="inputBox">
+    <input type="date" />
+    </div>
+    <br>
+        <div class="inputBox">
+            <input type="password" name="password1" placeholder="Mot de passe">
+        </div>
+        <br>
+        <div class="inputBox">
+        <input type="password" name="password" placeholder="Confirmer mot de passe" [(ngModel)]="password" />
+    </div>
+    <br>
+        <div class="inputBox">
+            <input type="submit" (click)="inscription()" value="S'inscrire" routerLink="jeu">
+        </div>
+    </form>
+</div>

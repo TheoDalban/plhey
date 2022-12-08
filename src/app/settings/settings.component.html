@@ -1,19 +1,35 @@
-<div class="card">
-    <div class="card-header">
-    <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" />
-    <div class="user">
-        <img src="https://media.istockphoto.com/id/910856488/photo/beautiful-african-american-female-model.jpg?s=612x612&w=0&k=20&c=zPxhqB08kcPpMmYKmTkHtkxZ2naIk-BB_IJbhJNgDSk=" />
-    </div>
-    </div>
-    <div class="card-body"> 
-    <span class="tag tag-teal">Mon Profil</span>
-    <br/>
-    <br/>
-    <br/>
-    <div class="control">
-        <button class="btn">
-       <span class="participe">Modifier mon profil</span>
-     </button>
-    </div>
-    </div>
+<div class="container">
+    <div class="form">
+        <h2>Modification</h2>
+        <form>
+            <div class="inputBox">
+                <input type="text" name="name" placeholder="Nom" [(ngModel)]="name" />
+            </div>
+            <br>
+            <div class="inputBox">
+            <input type="text" name="surname" placeholder="Prénom" [(ngModel)]="surname" />
+        </div>
+        <br>
+        <div class="inputBox">
+            <input type="text" name="mail" placeholder="E-mail" [(ngModel)]="mail" />
+        </div>
+        <br>
+        <div class="inputBox">
+            <input type="text" name="tel" placeholder="Téléphone" [(ngModel)]="tel" />
+        </div>
+        <br>
+        <br>
+            <div class="inputBox">
+                <input type="password" name="password1" placeholder="Mot de passe" />
+            </div>
+            <br>
+            <div class="inputBox">
+            <input type="password" name="password" placeholder="Confirmer mot de passe" [(ngModel)]="password" />
+        </div>
+        <br>
+        <div class="inputBox">
+            <input type="submit" (click)="update()" value="Confirmer" />
+        </div>
+    </form>
 </div>
+    

@@ -2,24 +2,32 @@
     <div class="card-header">
     <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" />
     <div class="user">
-        <img src="https://media.istockphoto.com/id/910856488/photo/beautiful-african-american-female-model.jpg?s=612x612&w=0&k=20&c=zPxhqB08kcPpMmYKmTkHtkxZ2naIk-BB_IJbhJNgDSk=" />
+        <img src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" />
     </div>
     </div>
     <div class="card-body"> 
-    <h1>
-        {{name}}
-    </h1>
-    <h2>
-        {{phone}}
-    </h2>
-    <span class="tag tag-teal">Mon Profil</span>
-    <br/>
-    <br/>
-    <br/>
-    <div class="control">
-        <button class="btn" (click)="settings()">
-       <span class="participe">Modifier mon profil</span>
-     </button>
-    </div>
+        <span class="tag tag-teal">Mon Profil</span>
+        <br/>
+        <h1>
+            {{surname}} {{name}}
+        </h1>
+        <h2>
+            {{tel}}
+        </h2>
+        <h2>
+            {{mail}}
+        </h2>
+        <br/>
+        <br/>
+        <br/>
+        <div class="control">
+            <button class="btn" (click)="events()">
+                <span class="participe">Mes évènements</span>
+                </button>
+            <br/>
+            <button class="btn" (click)="settings()">
+        <span class="participe">Modifier mon profil</span>
+        </button>
+        </div>
     </div>
 </div>

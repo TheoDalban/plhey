@@ -6,20 +6,22 @@
     <h1>
         {{name}}
     </h1>
-    <span class="tag tag-teal">{{type}}</span>
+    <img src="../../assets/{{type}}.png" height="30px" width="30px"/>
     <br/>
+    <h2>
+        Au {{rue}}, {{ville}} {{cp}}
+        <br/>
+        Le {{date}} à {{hour}}
+    </h2>
     <p>
-        Lieu : {{address}}
+        {{desc}}
     </p>
     <div class="user">
-        <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
         <div class="user-info">
-        <h4>{{ profilname }}</h4>
-        <small>Il y a 2h</small>
+        <h4>Organisé par : {{ orga }}</h4>
+        <small>Il y a 1h</small>
         </div>
     </div>
-    <br/>
-    <br/>
     <div class="control">
         <button class="btn">
        <span class="participe">Je participe</span>

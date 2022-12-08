@@ -16,6 +16,7 @@ import { SplashComponent } from './splash/splash.component';
 import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 const routes: Routes = [{
   path: "",
@@ -44,6 +45,10 @@ const routes: Routes = [{
 {
   path: "profile",
   component: ProfileComponent,
+},
+{
+  path: "profile/myevents",
+  component: MyEventsComponent,
 },
 {
   path: "profile/settings",

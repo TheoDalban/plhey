@@ -18,7 +18,10 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.profileService.profiles.length == 0) {
-      this.profileService.profiles.push({"name": "Julie Délivre"});     
+      this.profileService.profiles.push({"name": "Julie Délivre"});
+      this.profileService.profiles.push({"name": "Selma Ritime"});     
+      this.profileService.profiles.push({"name": "Alain Terrieur"});     
+      this.profileService.profiles.push({"name": "Vincent Tim"});     
     } 
     console.log(this.evtService.events.length);
   }

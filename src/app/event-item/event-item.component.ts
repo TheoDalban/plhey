@@ -9,17 +9,22 @@ import { Router } from '@angular/router';
 export class EventItemComponent {
   @Input() index = "";
   @Input() name = "";
-  @Input() address = "";
   @Input() type = "";
-  @Input() icon = "";
-  @Input() nb = "0";
+  @Input() date = "";
+  @Input() hour = "";
+  @Input() desc = "";
+  @Input() nb = "";
+  @Input() age = "";
+  @Input() rue = "";
+  @Input() ville = "";
+  @Input() cp = "";
+  icon = "";
 
   constructor(private monRouteur: Router) {
     this.icon = this.type+".png";
   }
 
   ngOnInit(): void {
-    console.log(this.name);
   }
 
   showEvent(i: string) {

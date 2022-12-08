@@ -1,10 +1,10 @@
 <div class="contain">
     <div class="form">
-        <h2>Tous les évènements</h2>
+        <h2>Mes évènements</h2>
     </div>
 </div>
 <div class="list">
-    <ng-container *ngFor="let event of evtService.events;let i = index">
+    <ng-container *ngFor="let event of evtService.myevents;let i = index">
         <app-event-item index={{i}} name="{{event.name}}" type="{{event.type}}" rue="{{event.rue}}" ville="{{event.ville}}" cp="{{event.cp}}" date="{{event.date}}" hour="{{event.hour}}"></app-event-item>
     </ng-container>
 </div>

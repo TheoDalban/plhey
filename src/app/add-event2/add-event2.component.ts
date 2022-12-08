@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EvtService } from '../services/evt.service';
+import { ProfileService } from '../services/profile.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -21,7 +22,7 @@ export class AddEvent2Component implements OnInit {
   pays = "France";
   add = "";
 
-constructor(private monRouteur: ActivatedRoute, public evtService: EvtService) {}
+constructor(private monRouteur: ActivatedRoute, public evtService: EvtService, public profileService: ProfileService) {}
 
   ngOnInit(): void {
     this.monRouteur.queryParams
@@ -38,7 +39,8 @@ constructor(private monRouteur: ActivatedRoute, public evtService: EvtService) {
   }
 
   addEvent() {
-    this.evtService.events.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "address": this.rue+" "+this.ville+" "+this.cp, "country": this.pays});
+    this.evtService.events.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name});
+    this.evtService.myevents.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name});
     this.add = "Evènement ajouté !";
   }
 }

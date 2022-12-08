@@ -8,20 +8,33 @@ import { EvtService } from '../services/evt.service';
   styleUrls: ['./event-page.component.scss']
 })
 export class EventPageComponent {
-  @Input() name = "Event 1";
-  @Input() address = "Event 1";
-  @Input() type = "Event 1";
-  @Input() nb = "Event 1";
+  @Input() name = "";
+  @Input() type = "";
+  @Input() date = "";
+  @Input() hour = "";
+  @Input() desc = "";
+  @Input() nb = "";
+  @Input() age = "";
+  @Input() rue = "";
+  @Input() ville = "";
+  @Input() cp = "";
   @Input() id = 0;
-  @Input() profilname = "Julie Délivre";
+  @Input() orga = "";
 
-  constructor(private monActRouteur: ActivatedRoute,public evtService: EvtService) {}
+  constructor(private monActRouteur: ActivatedRoute, public evtService: EvtService) {}
 
   ngOnInit(): void {
     this.id = parseInt(this.monActRouteur.snapshot.params['id']);
     this.name = this.evtService.events[this.id].name;
-    this.address = this.evtService.events[this.id].address;
     this.type = this.evtService.events[this.id].type;
+    this.date = this.evtService.events[this.id].date;
+    this.hour = this.evtService.events[this.id].hour;
+    this.desc = this.evtService.events[this.id].desc;
     this.nb = this.evtService.events[this.id].nb;
+    this.age = this.evtService.events[this.id].age;
+    this.rue = this.evtService.events[this.id].rue;
+    this.ville = this.evtService.events[this.id].ville;
+    this.cp = this.evtService.events[this.id].cp;
+    this.orga = this.evtService.events[this.id].orga;
   }
 }
