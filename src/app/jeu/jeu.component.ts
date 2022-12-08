@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MarkerService } from '../services/marker.service';
 
 @Component({
   selector: 'app-jeu',
@@ -19,7 +18,7 @@ export class JeuComponent {
 
   coord = [];
 
-  constructor(private markerService: MarkerService) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.axios.get('https://boardgamegeek.com/xmlapi2/'+this.params['query'])

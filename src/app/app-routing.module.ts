@@ -17,6 +17,7 @@ import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { ParticipationComponent } from './participation/participation.component';
 
 const routes: Routes = [{
   path: "",
@@ -61,6 +62,10 @@ const routes: Routes = [{
 {
   path: "event/:id",
   component: EventPageComponent,
+},
+{
+  path: "participation/:id",
+  component: ParticipationComponent,
 },
 {
   path: "profile/:id",

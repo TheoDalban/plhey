@@ -23,12 +23,12 @@ import { SettingsComponent } from './settings/settings.component';
 import { SessionLoginService } from './services/session-login.service';
 import { SplashComponent } from './splash/splash.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MarkerService } from './services/marker.service';
 import { PopupService } from './services/popup.service';
 import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { ParticipationComponent } from './participation/participation.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { MyEventsComponent } from './my-events/my-events.component';
     JeuLibComponent,
     AmisAddComponent,
     AddEvent2Component,
-    MyEventsComponent
+    MyEventsComponent,
+    ParticipationComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,6 @@ import { MyEventsComponent } from './my-events/my-events.component';
   providers: [EvtService,
               ProfileService,
               SessionLoginService,
-              MarkerService,
               PopupService],
   bootstrap: [AppComponent],
 })

@@ -39,8 +39,8 @@ constructor(private monRouteur: ActivatedRoute, public evtService: EvtService, p
   }
 
   addEvent() {
-    this.evtService.events.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name});
-    this.evtService.myevents.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name});
+    this.evtService.events.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name, "tel": this.profileService.myprofile[0].tel});
+    this.evtService.myevents.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name, "tel": this.profileService.myprofile[0].tel});
     this.add = "Evènement ajouté !";
   }
 }

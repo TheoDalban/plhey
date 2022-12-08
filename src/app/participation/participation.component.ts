@@ -3,11 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { EvtService } from '../services/evt.service';
 
 @Component({
-  selector: 'app-event-page',
-  templateUrl: './event-page.component.html',
-  styleUrls: ['./event-page.component.scss']
+  selector: 'app-participation',
+  templateUrl: './participation.component.html',
+  styleUrls: ['./participation.component.scss']
 })
-export class EventPageComponent {
+export class ParticipationComponent {
   @Input() name = "";
   @Input() type = "";
   @Input() date = "";
@@ -20,6 +20,7 @@ export class EventPageComponent {
   @Input() cp = "";
   @Input() id = 0;
   @Input() orga = "";
+  @Input() tel = "";
 
   constructor(private monActRouteur: ActivatedRoute, private monRouteur: Router, public evtService: EvtService) {}
 
@@ -36,10 +37,11 @@ export class EventPageComponent {
     this.ville = this.evtService.events[this.id].ville;
     this.cp = this.evtService.events[this.id].cp;
     this.orga = this.evtService.events[this.id].orga;
+    this.tel = this.evtService.events[this.id].tel;
   }
 
-  participer() {
-    setTimeout(() => {this.monRouteur.navigateByUrl("participation/"+this.id)}, 500);
-
+  accepter() {
+    this.evtService.myevents.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": "France", "orga": this.orga, "tel": this.tel});
+    setTimeout(() => {this.monRouteur.navigateByUrl("event/"+this.id)}, 500);
   }
 }
