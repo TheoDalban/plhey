@@ -3,7 +3,6 @@
     font-family: 'Poppins', sans-serif;
     width: 100%;
 }
-
 .container {
     position: relative;
     width: 100%;
@@ -19,14 +18,12 @@
     border-bottom: 1px solid rgba(255,255,255,0.2);
     padding: 0;
 }
-
 .form {
     position: relative;
     width: 100%;
     height: 70%;
     padding: 30px;
 }
-
 .form h2 {
     position: relative;
     color: #fff;
@@ -35,18 +32,16 @@
     letter-spacing: 1px;
     margin-bottom: 40px;
 }
-
 .form p {
     position: relative;
     color: #fff;
     font-size: 17px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-top: 10px;
+    text-align: center;
 }
-
 .form h2::before {
-    content: "";
+content: "";
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -54,8 +49,7 @@
     height: 4px;
     background: #fff;
 }
-
-.form .inputBox input, select, option{
+.form .inputBox input, select, textarea{
     width: 100%;
     background: rgba(255,255,255,0.2);
     border: none;
@@ -66,14 +60,13 @@
     margin-bottom: 10px;
     color: white;
 }
-
 .form .inputNb{
     width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
 }
-
 .form .inputNb input{
     background: rgba(255,255,255,0.2);
     color: white;
@@ -82,27 +75,30 @@
     padding: 10px 20px;
     border-radius: 35px;
     font-size: 15px;
+}
+.form .inputNb input[type="number"]{
     width: 80px;
 }
-
+.form .inputNb input[type="date"]{
+    width: 125px;
+}
+.form .inputNb input[type="time"]{
+    width: 85px;
+}
 .form .inputBox input::placeholder{
-    color: #fff;  
-} 
-
+    color: #fff;
+}
 .form .inputBox input[type="submit"]{
     background: #fff;
     color: #666;
     width: auto;
     cursor: pointer;
-    margin-bottom: 20px;
     font-weight: 600;
 }
-
 .forget {
     margin-top: 5px;
     color: #fff;
 }
-
 .forget a{
     color: #fff;
     font-weight: 600;

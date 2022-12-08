@@ -3,5 +3,8 @@
         <h2>Tous les évènements</h2>
     </div>
 </div>
-<div><p *ngFor="let event of evtService.events;let i = index"><app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item></p>
+<div class="list">
+    <ng-container *ngFor="let event of evtService.events;let i = index">
+        <app-event-item index={{i}} name="{{event.name}}" address="{{event.address}}" type="{{event.type}}" nb="{{event.nb}}"></app-event-item>
+    </ng-container>
 </div>

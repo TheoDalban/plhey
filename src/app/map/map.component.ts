@@ -1,13 +1,13 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { MarkerService } from '../services/marker.service';
+import { EvtService } from '../services/evt.service';
 
 @Component({
   selector: 'map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit, AfterViewInit {
+export class MapComponent implements OnInit {
   map!: L.Map;
   icon = {
     icon: L.icon({
@@ -17,41 +17,42 @@ export class MapComponent implements OnInit, AfterViewInit {
     })
   };
 
-  axios = require('axios');
-  params = {
-    access_key: '56a31143cc4ed614dbc4820933d1df34',
-    query: '3 rue flachet villeurbanne France'
-  };
+  constructor(private evtService: EvtService) {}
 
-  constructor(private markerService: MarkerService) {}
-
-  ngOnInit(): void {}
-
-  private initMap(): void {
-    this.axios.get('http://api.positionstack.com/v1/forward?access_key='+this.params['access_key']+'&query='+this.params['query'])
-    .then((response: { data: any; }) => {
-      let coord = response.data.data[0];
-      console.log(coord);
-      const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
-      marker.addTo(this.map);
-    }).catch((error: any) => {
-      console.log(error);
-    });
-
+  ngOnInit(): void {
     this.map = L.map('map', {
       center: [ 45.750000, 4.850000 ],
       zoom: 12
     });
-
+    
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        minZoom: 3,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      });
+      maxZoom: 18,
+      minZoom: 3,    
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'   
+    });    
       tiles.addTo(this.map);
+    }
+     
+  private initMap(axios: any, params: any): void {
+    axios.get('http://api.positionstack.com/v1/forward?access_key='+params['access_key']+'&query='+params['query'])
+    .then((response: { data: any; }) => {
+      let coord = response.data.data[0];
+      console.log(coord)
+      for (let i=0; i<this.evtService.events.length; i++) {
+        const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
+        marker.addTo(this.map); 
+      }
+    }).catch((error: any) => {
+      console.log(error);
+    });
   }
-
-  ngAfterViewInit(): void {
-    this.initMap();
+    
+  addEvent(address: String) {
+    let axios = require('axios');
+    let params = { 
+      access_key: '56a31143cc4ed614dbc4820933d1df34',
+      query: address
+    };
+    this.initMap(axios, params);
   }
 }
