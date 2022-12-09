@@ -34,7 +34,7 @@ export class MapComponent implements OnInit {
     this.addEvent();
   }
      
-  private initMap(address: any): void {
+  private initMap(address: any, name: any): void {
     let axios = require('axios');
     let params = { 
       access_key: '56a31143cc4ed614dbc4820933d1df34',
@@ -46,6 +46,7 @@ export class MapComponent implements OnInit {
       console.log(coord)
       const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
       marker.addTo(this.map); 
+      marker.bindPopup(name).openPopup();
     }).catch((error: any) => {
       console.log(error);
     });
@@ -54,7 +55,8 @@ export class MapComponent implements OnInit {
   addEvent() {
     for (let i=0; i<this.evtService.myevents.length; i++) {
       let address = this.evtService.myevents[i].rue+" "+this.evtService.myevents[i].ville+" "+this.evtService.myevents[i].cp+" "+this.evtService.myevents[i].country;
-      this.initMap(address);
+      let name = this.evtService.myevents[i].name;
+      this.initMap(address,name);
     }
   }
 }
