@@ -23,15 +23,16 @@
 .card-header {
  display: flex;
  justify-content: center;
- height: 370px;
+ height: 150px;
  width: 100%;
 }
 
 .card-header img {
   position: absolute;
-  width: 100%;
+  width: 370px;
   height: 150px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .user {
