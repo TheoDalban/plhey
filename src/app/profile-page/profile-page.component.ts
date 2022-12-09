@@ -8,7 +8,7 @@ import { ProfileService } from '../services/profile.service';
   styleUrls: ['./profile-page.component.scss']
 })
 export class ProfilePageComponent {
-  @Input() name = "Julie Délivre";
+  @Input() name = "";
   @Input() id = 0;
   @Input() tel = "";
 
