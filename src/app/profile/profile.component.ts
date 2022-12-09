@@ -17,7 +17,6 @@ export class ProfileComponent {
   constructor(private monRouteur: Router, public profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.profileService.myprofile.push({"name": "moi", "surname": "Moi", "mail": "qeibz@fbizu.fr", "tel": "90824987"});
     this.name = this.profileService.myprofile[0].name;
     this.surname = this.profileService.myprofile[0].surname;
     this.mail = this.profileService.myprofile[0].mail;

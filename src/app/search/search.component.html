@@ -23,7 +23,7 @@
 <div class="list" *ngIf="type=='profile'">
     <ng-container *ngFor="let profile of profileService.profiles;let i = index">
         <p *ngIf="profile.name.includes(searchText)">
-            <app-profile-item index={{i}} name="{{profile.name}}"></app-profile-item>
+            <app-profile-item index={{i}} name="{{profile.name}}" tel="{{profile.tel}}"></app-profile-item>
         </p> 
     </ng-container>
 </div>

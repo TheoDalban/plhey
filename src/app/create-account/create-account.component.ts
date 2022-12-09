@@ -19,5 +19,6 @@ export class CreateAccountComponent {
   inscription() {
     this.loginService.log = true;
     this.profileService.myprofile.push({"name": this.name, "surname": this.surname, "mail": this.mail, "tel": this.tel, "password": this.password});
+    setTimeout(() => {this.monRouteur.navigateByUrl("home")}, 500);
   }
 }

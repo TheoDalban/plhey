@@ -10,12 +10,13 @@ import { ProfileService } from '../services/profile.service';
 export class ProfilePageComponent {
   @Input() name = "Julie Délivre";
   @Input() id = 0;
-  @Input() phone = "0770787997";
+  @Input() tel = "";
 
   constructor(private monActRouteur: ActivatedRoute,public profileService: ProfileService) {}
 
   ngOnInit(): void {
     this.id = parseInt(this.monActRouteur.snapshot.params['id']);
     this.name = this.profileService.profiles[this.id].name;
+    this.tel = this.profileService.profiles[this.id].tel;
   }
 }

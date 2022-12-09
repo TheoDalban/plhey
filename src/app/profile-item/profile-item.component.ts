@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class ProfileItemComponent {
   @Input() index = "";
-  @Input() name = "Event 1";
-  @Input() phone = "0770787997";
+  @Input() name = "";
+  @Input() tel = "";
 
   constructor(private monRouteur: Router) {}
 
