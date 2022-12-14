@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { environment } from 'src/environments/environment';
+import { FirestoreModule, provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { FormsComponent } from './forms/forms.component';
@@ -29,6 +31,10 @@ import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { ParticipationComponent } from './participation/participation.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -59,7 +65,12 @@ import { ParticipationComponent } from './participation/participation.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    provideFunctions(() => getFunctions()),
+    provideStorage(() => getStorage())
   ],
   providers: [EvtService,
               ProfileService,

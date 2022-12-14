@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "plhey-370209": {
+      "hosting": {
+        "plhey": [
+          "plhey-370209"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "plhey-370209"
+  }
+}

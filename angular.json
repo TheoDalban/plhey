@@ -41,8 +41,7 @@
               "src/styles.scss",
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [
-           ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -114,7 +113,14 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "plhey:build:production",
+            "firebaseProject": "plhey-370209",
+            "firebaseHostingSite": "plhey-370209"
+          }
         }
       }
     }
