@@ -22,9 +22,17 @@ export class SearchComponent implements OnInit {
 
   searchEvent() {
     this.type = 'event';
+    let btnEvent = document.getElementById("btnEvent");
+    btnEvent!.style.background = "#efd229";
+    let btnPerson = document.getElementById("btnPerson");
+    btnPerson!.style.background = "white";
   }
 
-  searchPeople() {
+  searchPerson() {
     this.type = 'profile';
+    let btnEvent = document.getElementById("btnEvent");
+    btnEvent!.style.background = "white";
+    let btnPerson = document.getElementById("btnPerson");
+    btnPerson!.style.background = "#efd229";
   }
 }

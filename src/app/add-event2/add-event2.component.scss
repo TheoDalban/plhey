@@ -95,6 +95,27 @@ content: "";
     cursor: pointer;
     font-weight: 600;
 }
+.form .inputBox input[type="submit"]:hover{
+    background: #efd229;
+    color: rgb(0, 0, 0);
+    width: auto;
+    cursor: pointer;
+    font-weight: 600;
+}
+.form .inputBox input[type="button"]{
+    background: #561521;
+    color: rgb(255, 255, 255);
+    width: auto;
+    cursor: pointer;
+    font-weight: 550;
+}
+.form .inputBox input[type="button"]:hover{
+    background: #efd229;
+    color: rgb(0, 0, 0);
+    width: auto;
+    cursor: pointer;
+    font-weight: 550;
+}
 .forget {
     margin-top: 5px;
     color: #fff;

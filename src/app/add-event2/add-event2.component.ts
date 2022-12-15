@@ -43,4 +43,28 @@ constructor(private monRouteur: ActivatedRoute, public evtService: EvtService, p
     this.evtService.myevents.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": this.pays, "orga": this.profileService.myprofile[0].surname+" "+this.profileService.myprofile[0].name, "tel": this.profileService.myprofile[0].tel});
     this.add = "Evènement ajouté !";
   }
+
+  geolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+          let lat = position.coords.latitude;
+          let lng = position.coords.longitude;
+          let axios = require('axios');
+          let params = { 
+            access_key: '56a31143cc4ed614dbc4820933d1df34',
+            query: String(lat) +","+ String(lng)
+          };
+          axios.get('http://api.positionstack.com/v1/reverse?access_key='+params['access_key']+'&query='+params['query'])
+          .then((response: { data: any; }) => {
+            let coord = response.data.data[0];
+            this.rue = coord.name;
+            this.ville = coord.locality;
+            this.cp = coord.postal_code;
+          }).catch((error: any) => {
+            console.log(error);
+          });
+      }
+      );
+    }
+  }
 }

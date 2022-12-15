@@ -24,7 +24,15 @@ export class MapComponent implements OnInit {
       center: [ 45.750000, 4.850000 ],
       zoom: 12
     });
-    
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.map.panTo([position.coords.latitude, position.coords.longitude]);
+        this.coordsMap(position.coords.latitude, position.coords.longitude);
+      }
+      );
+    }
+
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       minZoom: 3,    
@@ -34,7 +42,12 @@ export class MapComponent implements OnInit {
     this.addEvent();
   }
      
-  private initMap(address: any, name: any): void {
+  private coordsMap(lat: any, lng: any): void {
+    const marker = L.marker([lat, lng], this.icon);
+    marker.addTo(this.map); 
+  }
+
+  private addressMap(address: any, name: any, date: any, icon: any): void {
     let axios = require('axios');
     let params = { 
       access_key: '56a31143cc4ed614dbc4820933d1df34',
@@ -44,9 +57,9 @@ export class MapComponent implements OnInit {
     .then((response: { data: any; }) => {
       let coord = response.data.data[0];
       console.log(coord)
-      const marker = L.marker([coord['latitude'],coord['longitude']], this.icon);
+      const marker = L.marker([coord['latitude'],coord['longitude']], icon);
       marker.addTo(this.map); 
-      marker.bindPopup(name).openPopup();
+      marker.bindPopup(name+"<br/>"+date);
     }).catch((error: any) => {
       console.log(error);
     });
@@ -56,7 +69,15 @@ export class MapComponent implements OnInit {
     for (let i=0; i<this.evtService.myevents.length; i++) {
       let address = this.evtService.myevents[i].rue+" "+this.evtService.myevents[i].ville+" "+this.evtService.myevents[i].cp+" "+this.evtService.myevents[i].country;
       let name = this.evtService.myevents[i].name;
-      this.initMap(address,name);
+      let date = this.evtService.myevents[i].date;
+      let icon = {
+        icon: L.icon({
+          iconSize: [ 40, 40 ],
+          iconAnchor: [ 13, 0 ],
+          iconUrl: '../../assets/'+this.evtService.myevents[i].type+'.png',
+        })
+      };
+      this.addressMap(address,name,date,icon);
     }
   }
 }

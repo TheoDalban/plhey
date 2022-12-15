@@ -71,6 +71,7 @@
     transform: translateY(20px);
 
 }
+
 .navigation ul li a .icon{
     color: #fff;
     padding: 2px 7px;
@@ -80,6 +81,10 @@
     border-radius: 10px;
    // opacity: 0;
     transform: translateY(0px);
+}
+
+.navigation ul li a .icon svg{
+    border-radius: 5px;
 }
 
 .navigation ul li:hover.active a .text{

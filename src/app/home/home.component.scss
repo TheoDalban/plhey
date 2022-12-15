@@ -24,12 +24,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
+
 .form {
     position: relative;
     width: 100%;
@@ -40,10 +42,9 @@
 .form h2 {
     position: relative;
     color: #fff;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 40px;
 }
 
 .form h2::before {
@@ -85,11 +86,11 @@
 
 .list {
     overflow-y: scroll;
-    max-height: 390px;
+    max-height: 200px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    padding: 5px;
-    margin-top: 10px;
+    border-radius: 5px;
+    margin: 0 5px 5px 5px;
 }
 
 .list::-webkit-scrollbar {

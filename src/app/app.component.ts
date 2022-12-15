@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SessionLoginService } from './services/session-login.service';
 import { Firestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,7 @@ export class AppComponent {
   //inProgress = this.store.collection('inProgress').valueChanges({ idField: 'id' }) as Observable<Task[]>;
   //done = this.store.collection('done').valueChanges({ idField: 'id' }) as Observable<Task[]>;
 
-  constructor(public loginService: SessionLoginService, private store: Firestore) {}
+  constructor(private monRouteur: Router, public loginService: SessionLoginService, private store: Firestore) {
+    this.monRouteur.navigate(['']);
+  }
 }

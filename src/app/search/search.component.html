@@ -8,22 +8,22 @@
             <br>
         </form>
         <div class="search">
-        <button class="btn" (click)="searchEvent()">Evènement</button>
-        <button class="btn" (click)="searchPeople()">Personne</button>
+            <button class="btn" id="btnEvent" (click)="searchEvent()">Evènement</button>
+            <button class="btn" id="btnPerson" (click)="searchPerson()">Personne</button>
         </div>
     </div>
-</div>
-<div class="list" *ngIf="type=='event'">
-    <ng-container *ngFor="let event of evtService.events;let i = index">
-        <p *ngIf="event.name.includes(searchText)">
-            <app-event-item index={{i}} name="{{event.name}}" type="{{event.type}}" rue="{{event.rue}}" ville="{{event.ville}}" cp="{{event.cp}}" date="{{event.date}}" hour="{{event.hour}}"></app-event-item>
+    <div class="list" *ngIf="type=='event'">
+        <ng-container *ngFor="let event of evtService.events;let i = index">
+            <p *ngIf="event.name.includes(searchText)">
+                <app-event-item index={{i}} name="{{event.name}}" type="{{event.type}}" rue="{{event.rue}}" ville="{{event.ville}}" cp="{{event.cp}}" date="{{event.date}}" hour="{{event.hour}}"></app-event-item>
+                </p> 
+        </ng-container>
+    </div>
+    <div class="list" *ngIf="type=='profile'">
+        <ng-container *ngFor="let profile of profileService.profiles;let i = index">
+            <p *ngIf="profile.name.includes(searchText)">
+                <app-profile-item index={{i}} name="{{profile.name}}" tel="{{profile.tel}}"></app-profile-item>
             </p> 
-    </ng-container>
-</div>
-<div class="list" *ngIf="type=='profile'">
-    <ng-container *ngFor="let profile of profileService.profiles;let i = index">
-        <p *ngIf="profile.name.includes(searchText)">
-            <app-profile-item index={{i}} name="{{profile.name}}" tel="{{profile.tel}}"></app-profile-item>
-        </p> 
-    </ng-container>
+        </ng-container>
+    </div>
 </div>

@@ -4,6 +4,9 @@
         <h2>Lieu</h2>
         <form>
             <div class="inputBox">
+                <input type="button" (click)="geolocation()" value="Position actuelle" />
+            </div>
+            <div class="inputBox">
                 <input type="text" name="name" placeholder="Rue" [(ngModel)]="rue" />
             </div>
             <br/>
@@ -12,9 +15,9 @@
             </div>
             <br>
             <div class="inputBox">
-            <input type="text" name="type" placeholder="Code Postal" [(ngModel)]="cp" />
-        </div>
-        <br>
+                <input type="text" name="type" placeholder="Code Postal" [(ngModel)]="cp" />
+            </div>
+            <br>
             <div class="inputBox">
                 <input type="submit" (click)="addEvent()" value="Ajouter" />
             </div>
