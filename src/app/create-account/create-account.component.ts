@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SessionLoginService } from '../services/session-login.service';
+import { LoginService } from '../services/login.service';
 import { ProfileService } from '../services/profile.service';
 import { Router } from '@angular/router';
 
@@ -13,12 +13,12 @@ export class CreateAccountComponent {
   @Input() surname = "";
   @Input() mail = "";
   @Input() tel = "";
+  @Input() date = "";
   @Input() password = "";
-  constructor(private monRouteur: Router, public loginService: SessionLoginService, public profileService: ProfileService) {}
+  constructor(private monRouteur: Router, public loginService: LoginService, public profileService: ProfileService) {}
 
   inscription() {
-    this.loginService.log = true;
     this.profileService.myprofile.push({"name": this.name, "surname": this.surname, "mail": this.mail, "tel": this.tel, "password": this.password});
-    setTimeout(() => {this.monRouteur.navigateByUrl("home")}, 500);
+    setTimeout(() => {this.monRouteur.navigateByUrl("create/jeu")}, 500);
   }
 }

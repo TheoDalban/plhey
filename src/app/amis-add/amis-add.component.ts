@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SessionLoginService } from '../services/session-login.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-amis-add',
@@ -8,7 +8,7 @@ import { SessionLoginService } from '../services/session-login.service';
   styleUrls: ['./amis-add.component.scss']
 })
 export class AmisAddComponent {
-  constructor(private monRouteur: Router, public loginService: SessionLoginService) {}
+  constructor(private monRouteur: Router, public loginService: LoginService) {}
   
   inscription() {
     this.loginService.log = true;

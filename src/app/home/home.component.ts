@@ -8,6 +8,8 @@ import { ProfileService } from '../services/profile.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  allUsers = [];
+
   constructor(public evtService: EvtService, public profileService: ProfileService) {}
 
   ngOnInit(): void {
@@ -24,4 +26,9 @@ export class HomeComponent {
       this.profileService.profiles.push({"name": "Vincent Tim", "tel": "0123344556"});     
     } 
   }
+
+  async getUsers() {
+       this.allUsers = await this.profileService.getAllUsers();
+       console.log(this.allUsers);
+    }
 }

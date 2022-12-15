@@ -38,9 +38,19 @@
 
 .container {
     margin-top: 50px;
-    margin-bottom: 15px;
     background: radial-gradient(1500px, #469dde, #fff);
-    //background: #469dde;
     width: 400px;
     height: 600px;
+}
+
+.navigation{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    background: #469DDE;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
 }

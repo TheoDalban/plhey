@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SessionLoginService } from '../services/session-login.service';
+import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent {
-  constructor(private monRouteur: Router, public loginService: SessionLoginService) {}
+  constructor(private monRouteur: Router, public loginService: LoginService) {}
 
   login() {
     this.loginService.log = true;

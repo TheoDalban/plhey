@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from 'src/environments/environment';
-import { FirestoreModule, provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { FormsComponent } from './forms/forms.component';
@@ -22,19 +25,14 @@ import { ProfileItemComponent } from './profile-item/profile-item.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileService } from './services/profile.service';
 import { SettingsComponent } from './settings/settings.component';
-import { SessionLoginService } from './services/session-login.service';
+import { LoginService } from './services/login.service';
 import { SplashComponent } from './splash/splash.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PopupService } from './services/popup.service';
 import { JeuLibComponent } from './jeu-lib/jeu-lib.component';
 import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { ParticipationComponent } from './participation/participation.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -66,16 +64,14 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideAuth(() => getAuth()),
-    provideFunctions(() => getFunctions()),
-    provideStorage(() => getStorage())
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [EvtService,
               ProfileService,
-              SessionLoginService,
-              PopupService],
+              LoginService],
   bootstrap: [AppComponent],
 })
 
