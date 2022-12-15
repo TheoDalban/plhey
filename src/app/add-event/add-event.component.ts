@@ -15,6 +15,7 @@ export class AddEventComponent implements OnInit {
   desc;
   nb;
   age;
+  ok = "";
 
   constructor(public monRouteur: Router) {
     this.name = "";
@@ -26,9 +27,15 @@ export class AddEventComponent implements OnInit {
     this.age = 3;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ok = "";
+  }
 
   next() {
-    this.monRouteur.navigate(["add/next"], { queryParams: { name: this.name, type: this.type, date: this.date, hour: this.hour, desc: this.desc, nb: this.nb, age: this.age }});
+    if (this.name == "" || this.type == "" || this.hour == "" || this.desc == "") {
+      this.ok = "Remplis tous les champs requis";
+    } else {
+      this.monRouteur.navigate(["add/next"], { queryParams: { name: this.name, type: this.type, date: this.date, hour: this.hour, desc: this.desc, nb: this.nb, age: this.age }});
+    }
   }
 }

@@ -12,7 +12,8 @@
 
 .info {
 	position: relative;
-	text-align: left;
+	display: flex;
+    align-items: center;
 	overflow: hidden;
 	padding: 3px;
 	height: 100%;

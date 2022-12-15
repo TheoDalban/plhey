@@ -21,6 +21,7 @@ export class ParticipationComponent {
   @Input() id = 0;
   @Input() orga = "";
   @Input() tel = "";
+  asked = "";
 
   constructor(private monActRouteur: ActivatedRoute, private monRouteur: Router, public evtService: EvtService) {}
 
@@ -38,10 +39,11 @@ export class ParticipationComponent {
     this.cp = this.evtService.events[this.id].cp;
     this.orga = this.evtService.events[this.id].orga;
     this.tel = this.evtService.events[this.id].tel;
+    this.asked = "";
   }
 
   accepter() {
+    this.asked = "Demande envoyée !";
     this.evtService.myevents.push({"name": this.name, "type": this.type, "date": this.date, "hour": this.hour, "desc": this.desc, "nb": this.nb, "age": this.age, "rue": this.rue, "ville": this.ville, "cp": this.cp, "country": "France", "orga": this.orga, "tel": this.tel});
-    setTimeout(() => {this.monRouteur.navigateByUrl("event/"+this.id)}, 500);
   }
 }

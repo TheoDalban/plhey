@@ -27,8 +27,9 @@ export class HomeComponent {
     } 
   }
 
-  async getUsers() {
+  /*async getUsers() {
        this.allUsers = await this.profileService.getAllUsers();
        console.log(this.allUsers);
     }
+	*/
 }

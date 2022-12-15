@@ -14,11 +14,12 @@ export class CreateAccountComponent {
   @Input() mail = "";
   @Input() tel = "";
   @Input() date = "";
-  @Input() password = "";
+  @Input() password1 = "";
+  @Input() password2 = "";
   constructor(private monRouteur: Router, public loginService: LoginService, public profileService: ProfileService) {}
 
   inscription() {
-    this.profileService.myprofile.push({"name": this.name, "surname": this.surname, "mail": this.mail, "tel": this.tel, "password": this.password});
+    this.profileService.myprofile.push({"name": this.name, "surname": this.surname, "mail": this.mail, "tel": this.tel, "password": this.password1});
     setTimeout(() => {this.monRouteur.navigateByUrl("create/jeu")}, 500);
   }
 }

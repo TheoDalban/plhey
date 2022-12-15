@@ -9,11 +9,12 @@ export class ProfileService {
     profiles = new Array();
     myprofile = new Array();
 
-    constructor (private db: AngularFirestore) {}
+    constructor (/*private db: AngularFirestore*/) {}
 
-    getAllUsers() {
+    /*getAllUsers() {
         return new Promise<any>((resolve)=> {
             this.db.collection('User').valueChanges({ idField: 'id' }).subscribe(users => resolve(users));
             })
         }
+		*/
 }

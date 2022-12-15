@@ -48,21 +48,24 @@ export class MapComponent implements OnInit {
   }
 
   private addressMap(address: any, name: any, date: any, icon: any): void {
-    let axios = require('axios');
+    //let axios = require('axios');
     let params = { 
-      access_key: '56a31143cc4ed614dbc4820933d1df34',
+      access_key: 'df80400bcc154490aea2b52d7b0a2236',
       query: address
     };
-    axios.get('http://api.positionstack.com/v1/forward?access_key='+params['access_key']+'&query='+params['query'])
-    .then((response: { data: any; }) => {
-      let coord = response.data.data[0];
-      console.log(coord)
-      const marker = L.marker([coord['latitude'],coord['longitude']], icon);
+    var requestOptions = {
+      method: 'GET',
+    };
+    fetch("https://api.geoapify.com/v1/geocode/search?text="+params['query']+"&apiKey="+params['access_key'], requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result.features[0]);
+      let coord = result.features[0].bbox;
+      const marker = L.marker([coord[1],coord[0]], icon);
       marker.addTo(this.map); 
       marker.bindPopup(name+"<br/>"+date);
-    }).catch((error: any) => {
-      console.log(error);
-    });
+    })
+    .catch(error => console.log('error', error));
   }
     
   addEvent() {

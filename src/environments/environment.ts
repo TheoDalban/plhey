@@ -6,12 +6,12 @@
 export const environment = {
   firebase: {
     projectId: 'plhey-370209',
-    appId: '1:268067807417:web:cb79177dd56e7ac9cd7b68',
+    appId: '1:268067807417:web:1ff3228e6ac4cacbcd7b68',
     databaseURL: 'https://plhey-370209-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'plhey-370209.appspot.com',
     apiKey: 'AIzaSyB87yHOGylC_E6EL7aLW30c7il8YoUkjtg',
     authDomain: 'plhey-370209.firebaseapp.com',
     messagingSenderId: '268067807417',
-    measurementId: 'G-4WG4P4H9CG',
+    measurementId: 'G-Q7H265J3VN',
   }
 };

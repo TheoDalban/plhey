@@ -49,20 +49,24 @@ constructor(private monRouteur: ActivatedRoute, public evtService: EvtService, p
       navigator.geolocation.getCurrentPosition((position) => {
           let lat = position.coords.latitude;
           let lng = position.coords.longitude;
-          let axios = require('axios');
           let params = { 
-            access_key: '56a31143cc4ed614dbc4820933d1df34',
-            query: String(lat) +","+ String(lng)
+            access_key: 'df80400bcc154490aea2b52d7b0a2236',
+            lat: String(lat),
+            lon: String(lng)
           };
-          axios.get('http://api.positionstack.com/v1/reverse?access_key='+params['access_key']+'&query='+params['query'])
-          .then((response: { data: any; }) => {
-            let coord = response.data.data[0];
-            this.rue = coord.name;
-            this.ville = coord.locality;
-            this.cp = coord.postal_code;
-          }).catch((error: any) => {
-            console.log(error);
-          });
+          var requestOptions = {
+            method: 'GET',
+          };
+
+          fetch("https://api.geoapify.com/v1/geocode/reverse?lat="+params['lat']+"&lon="+params['lon']+"&apiKey="+params['access_key'], requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            let coord = result.features[0].properties;
+            this.rue = coord.housenumber+" "+coord.street;
+            this.ville = coord.city;
+            this.cp = coord.postcode;
+            })
+          .catch(error => console.log('error', error));
       }
       );
     }
