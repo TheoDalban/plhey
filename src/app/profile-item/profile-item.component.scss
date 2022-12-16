@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
 
 #container{
-	background-color: white;
+	background: rgba(255,255,255,0.6);;
 	text-align: center;
 	border-radius: 5px;
 	overflow: hidden;
 	margin: 5px auto;
 	height: 100px;
 	border: #561521 solid 2px;
+	backdrop-filter: blur(5px);
 }
 
 .info {

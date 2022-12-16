@@ -6,28 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./jeu.component.scss']
 })
 export class JeuComponent {
-  // https://boardgamegeek.com/xmlapi2/id?3
-
-  tabJeu = [XMLDocument];
-
+  jeux: any;
   axios = require('axios');
-  params = {
-    access_key: '56a31143cc4ed614dbc4820933d1df34',
-    query: 'hot?type=boardgame'
-  };
-
-  coord = [];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.axios.get('https://boardgamegeek.com/xmlapi2/'+this.params['query'])
+    this.axios.get('https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&client_id=KVsy3riu5Q')
     .then((response: { data: any; }) => {
-      this.tabJeu.push(response.data);
-      console.log(this.tabJeu[1]);
-      return this.coord;
+      this.jeux = response.data.games;
+    });
+  }
+}
+  /*  this.axios.get('https://boardgamegeek.com/xmlapi2/'+this.params['query'])
+    .then((response: { data: any; }) => {
+      console.log(response.data);
+      const options = { // set up the default options 
+        textKey: 'item', // tag name for text nodes
+        attrKey: 'attr', // tag for attr groups
+        //cdataKey: 'cdata', // tag for cdata nodes (ignored if mergeCDATA is true)
+      };
+      let jeux = this.ngxXmlToJsonService.xmlToJson(response.data, options)
+      console.log(jeux);
     }).catch((error: any) => {
       console.log(error)
     });
   }
-  }
+*/

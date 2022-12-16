@@ -35,6 +35,8 @@ import { ParticipationComponent } from './participation/participation.component'
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { JeuItemComponent } from './jeu-item/jeu-item.component';
+import { JeuPageComponent } from './jeu-page/jeu-page.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     AmisAddComponent,
     AddEvent2Component,
     MyEventsComponent,
-    ParticipationComponent
+    ParticipationComponent,
+    JeuItemComponent,
+    JeuPageComponent
   ],
   imports: [
     BrowserModule,

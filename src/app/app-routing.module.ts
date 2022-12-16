@@ -18,6 +18,7 @@ import { AmisAddComponent } from './amis-add/amis-add.component';
 import { AddEvent2Component } from './add-event2/add-event2.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { ParticipationComponent } from './participation/participation.component';
+import { JeuPageComponent } from './jeu-page/jeu-page.component';
 
 const routes: Routes = [{
   path: "",
@@ -72,6 +73,10 @@ const routes: Routes = [{
   component: ProfilePageComponent,
 },
 {
+  path: "jeu/:id",
+  component: JeuPageComponent,
+},
+{
   path:"login",
   component: FormsComponent,
 },
@@ -87,10 +92,15 @@ const routes: Routes = [{
   component: JeuLibComponent,
 },
 {
-  path: "create/jeu/jeu-lib/amis", 
+  path: "create/jeu/amis", 
   component: AmisAddComponent,
-},{
-  path: "create/jeu/jeu-lib/amis/home",
+},
+{
+  path: "create/jeu/home",
+  component: HomeComponent,
+},
+{
+  path: "create/jeu/amis/home",
   component: HomeComponent,
 }
 ];

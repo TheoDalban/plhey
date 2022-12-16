@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EvtService } from '../services/evt.service';
+import { LoginService } from '../services/login.service';
 import { ProfileService } from '../services/profile.service';
 
 @Component({
@@ -9,10 +10,13 @@ import { ProfileService } from '../services/profile.service';
 })
 export class HomeComponent {
   allUsers = [];
+  jeux: any;
+  axios = require('axios');
 
-  constructor(public evtService: EvtService, public profileService: ProfileService) {}
+  constructor(public evtService: EvtService, public profileService: ProfileService, public loginService: LoginService) {}
 
   ngOnInit(): void {
+    this.loginService.log = true;
     if (this.evtService.events.length == 0) {
       this.evtService.events.push({"name": "Soirée jeux de rôle", "type": "role", "date": "16/12/2022", "hour": "20:00", "desc": "Soirée initiation au jeu de rôle pour découvrir cet univers en s'amusant !", "nb": "15", "age": "18", "rue": "6 rue Voltaire", "ville": "Pierre-Bénite", "cp": "69310", "country": "France", "orga": "Alain Terrieur", "tel": "0665544332"});
       this.evtService.events.push({"name": "Loup-garou party", "type": "loup", "date": "20/12/2022", "hour": "17:00", "desc": "Viens jouer avec tes amis à notre loup-garou party pour essayer de survivre au sein du village...", "nb": "9", "age": "16", "rue": "1 rue Puits Gaillot", "ville": "Lyon", "cp": "69001", "country": "France", "orga": "Julie Délivre", "tel": "0777889966"});
@@ -25,6 +29,10 @@ export class HomeComponent {
       this.profileService.profiles.push({"name": "Alain Terrieur", "tel": "0665544332"});     
       this.profileService.profiles.push({"name": "Vincent Tim", "tel": "0123344556"});     
     } 
+    this.axios.get('https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&client_id=KVsy3riu5Q')
+    .then((response: { data: any; }) => {
+      this.jeux = response.data.games;
+    });
   }
 
   /*async getUsers() {

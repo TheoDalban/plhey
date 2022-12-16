@@ -13,4 +13,9 @@
     <div class="form">
         <h2>Jeux du moment</h2>
     </div>
+    <div class="list2">
+        <ng-container *ngFor="let jeu of jeux;let i = index">
+          <app-jeu-item index={{i}} name="{{jeu.name}}"></app-jeu-item>
+      </ng-container>
+    </div>
 </div>
